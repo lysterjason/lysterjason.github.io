@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <head>
   <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-color.v2.min.js"></script>
+  <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
@@ -16,27 +19,256 @@
     "name": "2020 UFC Fight Results", "children": [{
         "name": "Decision",
         "children": [
-                      {"name": "M-D", "size": 1},
-                      {"name": "U-D", "size": 103},
-                      {"name": "S-D", "size": 22}
-                    ]
-    }, {
+          {"name": "M-D", "children": 
+            [
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+            ],  
+          },
+          {"name": "U-D",  "children": 
+            [
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "CW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "CW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "CW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
+            ],  
+          },
+          {"name": "S-D", "children": 
+            [
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"}
+            ],  
+          },
+        ]
+        }, 
+        {
         "name": "Finish",
         "children": [
             {
               "name": "KO",
               "children": [
-                {"name": "Punch", "size": 31},
-                {"name": "Kick", "size": 5},
-                {"name": "Flying Knee", "size": 1}
+                {"name": "Punch", "children": 
+                  [
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                  ],  
+                },
+                {"name": "Kick", "children": 
+                  [
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
+                  ],  
+                },
+                {"name": "Flying Knee", "children": 
+                  [
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+                  ],  
+                },
               ]
             },
             {
               "name": "TKO",
               "children": [
-                {"name": "Punches", "size": 31},
-                {"name": "Knees", "size": 5},
-                {"name": "Elbows", "size": 2},
+                {"name": "Punches", "children": 
+                  [
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                  ],  
+                },
+                {"name": "Knees", "children": 
+                  [
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+                  ],  
+                },
+                {"name": "Elbows", "children": 
+                  [
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                  ],  
+                },
               ]
             },
             {
@@ -44,21 +276,97 @@
               "children": [
                 {"name": "Choke", "children": 
                   [
-                    {"name": "Triangle", "size": 2},
-                    {"name": "RNC", "size": 16},
-                    {"name": "Guillotine", "size": 8},
-                    {"name": "D'Arce", "size": 2},
-                    {"name": "Arm Triangle", "size": 3},
-                    {"name": "Anaconda", "size": 1}
+                    {"name": "Triangle", "children": 
+                      [
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+                      ],  
+                    },
+                    {"name": "RNC", "children": 
+                      [
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "CW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
+                      ],  
+                    },
+                    {"name": "Guillotine", "children": 
+                      [
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                      ],  
+                    },
+                    {"name": "D'Arce", "children": 
+                      [
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "CW"},
+                      ],  
+                    },
+                    {"name": "Arm Triangle", "children": 
+                      [
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+                      ],  
+                    },
+                    {"name": "Anaconda", "children": 
+                      [
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
+                      ],  
+                    },
                   ],
                 },
                 {"name": "Joint Locks", "children": 
                   [
-                    {"name": "Kneebar", "size": 2},
-                    {"name": "Kimura", "size": 1},
-                    {"name": "Heel Hook", "size": 1},
-                    {"name": "Armbar", "size": 7},
-                    {"name": "Ankle Lock", "size": 1}
+                    {"name": "Kneebar", "children": 
+                      [
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"}
+                      ],
+                    },
+                    {"name": "Kimura", "children": 
+                      [
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
+                      ],  
+                    },
+                    {"name": "Heel Hook", "children": 
+                      [
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
+                      ],  
+                    },
+                    {"name": "Armbar", "children": [
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "CW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"}
+                      ],  
+                    },
+                    {"name": "Ankle Lock", "children": 
+                      [
+                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
+                      ],  
+                    },
                   ], 
                 },
               ],
@@ -126,6 +434,11 @@
       let self = d3.select(this);
       if ((d.data.size < 6 && d.depth > 2) || (d.data.size < 3 && d.depth <= 2)) {
         self.text("");
+      }
+      if (d.children) {
+        if (d.children.length < 6 && d.depth > 3) {
+          self.text("");
+        }
       }
     }
 
