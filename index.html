@@ -4,381 +4,389 @@
   <script src="https://d3js.org/d3-color.v2.min.js"></script>
   <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
   <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-  <div id="container">
-    <h1>2020 UFC Bout Results</h1>
-    <svg id="sunburst"></svg>
+  <div class="background">
+    <div class="left">
+      <h1 class="title" id="winner">Winner</h1>
+      <h3 id="left-fighter"></h3>
+    </div>
+    <div id="container">
+      <svg id="sunburst"></svg>
+    </div>
+    <div class="right">
+      <h1 class="title" id="loser">Loser</h1>
+      <h3 id="right-fighter"></h3>
+    </div>
   </div>
 </body>
 
 <script>
 
-    var ufcData = {
+    let ordinalColors = ["#96caff", "#faff16", "#fda899", "#13fcbb", "#eba6ff", "#bcca83", "#57e502", "#feaf23", "#c6c0cb", "#38f1fd", "#9ccfbe", "#f9feae", "#a6fe8e", "#bfcd03", "#ebd3b6", "#fec0df", "#c2eefc", "#cac2fc", "#bcfcd6", "#f4e5ff", "#f9dc56", "#80da93", "#ebb678", "#b1fb27", "#30dfc8", "#8dd0df", "#1ff479", "#cedbd8", "#d2e6b8", "#85feea", "#97db5c", "#deb7b7", "#cad5ef", "#d0eb6d", "#fe9fe1", "#bdc7ad", "#fcdadf", "#d9bae2", "#dac05a", "#ecda91", "#fef5d0", "#ffa4bc", "#43d9fd", "#d2fcf5", "#b1c7d0", "#e6f0fb", "#83e5bd", "#b2e598", "#fdfb73", "#73fd58", "#a6cfa2", "#a1e3e1", "#e4e21c", "#8ef8b0", "#e2c30e", "#fdc7ff", "#cefeb9", "#0be597", "#d4c491", "#fdc5b5", "#e4fdde", "#d5ccc7", "#acdaf8", "#e4c9da", "#fdc664", "#badfc5", "#bbd15f", "#fdf1f7", "#b4c3ed", "#93e8fd", "#ddd9e3", "#e5e5d7", "#98e116", "#e0d0fb", "#fccd95", "#aafdfe", "#5cd9de", "#deba9d", "#dce994", "#d6b2fb", "#c5bedd", "#bec4c3", "#feab79", "#82ea7f", "#fed7f3", "#8affd2", "#d6fc50", "#e8aed9", "#f7b7c2", "#2bf4e5", "#ffad53", "#11ff13", "#d3fe94", "#c2e530", "#aef161", "#fee5d4", "#a3d378", "#dad351", "#fec328", "#a4e3b3", "#a9efd9", "#feeb8a", "#85d4cd", "#e0b4c9", "#55e358", "#bddbe1", "#48ffa0", "#d6eee1", "#fee3b0", "#ff99fd", "#3fe0b0", "#84d7fe", "#7be9d3", "#1bf3cd", "#d4d4af", "#d6d278", "#70fffe", "#aac8e1", "#ffb0fe", "#b5ccbf", "#c6ccd5", "#ccd9c5", "#feee3e", "#cdc0ab", "#58e182", "#e9b8f8", "#f7bc97", "#b4e275", "#bee8e1", "#e1e3ff", "#ebebb2", "#8fd4af", "#c0d3a2", "#e7c67d", "#6ceba9", "#d8cde4", "#eacdc6", "#d4eef1", "#e7e8e9", "#7deaec", "#88f31d", "#c0efbe", "#75d8be", "#a0d1d3", "#fdacd4", "#09f64f", "#c4dc8c", "#d0d1fc", "#ecccf1", "#f7d517", "#d0dde8", "#e7dadc", "#78fe8b", "#e6e373", "#cde5fd", "#b1fead", "#e7fec5", "#e9fdfd", "#b9c3d9", "#cebec1", "#eab3a4", "#edb84a", "#8aea52", "#bad5fd", "#a7ddea", "#f9c9d5", "#f2deec", "#fbf4e7", "#b3d8cf", "#feb9ed", "#96e89d", "#d5d99c", "#efd16f", "#ecfb92", "#d0bbd2", "#89d97b", "#cdc47c", "#acd345", "#21e0f4", "#9ed693", "#9adfcd", "#ccdc4c", "#e3e3c2", "#d8f003", "#e7f158", "#b8fff2", "#cdb9e9", "#faa8ae", "#cac75c", "#d7d119", "#eccb48", "#bbd7ea", "#a0f3c1", "#cbeaa6", "#c5f4e0", "#ede9f5", "#b8bffd", "#97cced", "#70dba6", "#72dbf2", "#e6bddd", "#ddc2fe", "#b8ddb0", "#e7d29e", "#c7ec8c", "#d1edce", "#c8fb75", "#f9ffe8", "#e9abeb", "#b5d1b3", "#feb6af", "#ffba6e", "#92f772", "#e8f4cb", "#ffeda8", "#e5ff77", "#f6f8fe", "#c4c699", "#c5ca3f", "#e9bb29", "#19e2dc", "#d9bfb4", "#c6cabf", "#e6c091", "#bcd0d0", "#d5cbd3", "#aae346", "#d0d2d3", "#f1c7ab", "#72ef95", "#cdda6f", "#d9d5c0", "#a2eb81", "#72f3cc", "#91efe6", "#fed284", "#a6edf6", "#4bfee0", "#9bfb4f", "#c1f3f6", "#e0f9ab", "#d4ffd2", "#fffac1", "#a9c5fd", "#f0acc4", "#7adf34", "#a8d516", "#86dade", "#6cdfd7", "#a7d5b9", "#b4d899", "#f1c0bf", "#a9e8c7", "#e6e04c", "#fcd4bf", "#67feb6", "#ddfeee", "#f5af92", "#a7cddc", "#c7cae9", "#e1c2c9", "#06f6a4", "#64f36c", "#ffd056", "#e9d3ea", "#94f595", "#eadbcc", "#acf2b2", "#a2fde0", "#f5e5c6", "#f7eb67", "#f1e9e6", "#e2efdb", "#fbfd52", "#aacac8", "#6fdf6e", "#23e83d", "#d6c33e", "#edbb66", "#96d8f1", "#d9c9a7", "#30ef8c", "#66ed41", "#eabeed", "#c3dbce", "#d6d6e9", "#f8c6ee", "#d5d9d1", "#96f0cc", "#c7ef56", "#8ef6ff", "#aff0e8", "#b7f593", "#dee7e0", "#bdff5c", "#eff01a", "#d7f0fe", "#bdfdc3", "#f0ef9c", "#d3fe14", "#bec0ea", "#c6c2be", "#eab1b3"]
+    let ufcData = {
     "name": "2020 UFC Fight Results", "children": [{
-        "name": "Decision",
-        "children": [
-          {"name": "M-D", "children": 
-            [
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-            ],  
+      "name": "Decision",
+      "color": "#ed2939",
+      "children": [
+        {"name": "M-D", "color": "#F6959D", "children": 
+          [
+            { "fighterA": "Serghei Spivac", "fighterB": "Carlos Felipe", "size": 1, "weightclass": "WW"},
+          ],  
+        },
+        {"name": "U-D", "color": "#F58690", "children": 
+          [
+          {"fighterA":"Nathaniel Wood","fighterB":"John Castaneda","weight_class":"BW", "size": 1},
+          {"fighterA":"Brett Johns","fighterB":"Montel Jackson","weight_class":"BW", "size": 1},
+          {"fighterA":"Jordan Espinosa","fighterB":"Mark De La Rosa","weight_class":"BW", "size": 1},
+          {"fighterA":"Kyler Phillips","fighterB":"Gabriel Silva","weight_class":"BW", "size": 1},
+          {"fighterA":"Ricardo Ramos","fighterB":"Journey Newson","weight_class":"BW", "size": 1},
+          {"fighterA":"Andre Ewell","fighterB":"Anderson Dos Santos","weight_class":"BW", "size": 1},
+          {"fighterA":"Merab Dvalishvili","fighterB":"Casey Kenney","weight_class":"BW", "size": 1},
+          {"fighterA":"Grant Dawson","fighterB":"Nad Narimani","weight_class":"CW", "size": 1},
+          {"fighterA":"Merab Dvalishvili","fighterB":"Gustavo Lopez","weight_class":"CW", "size": 1},
+          {"fighterA":"Billy Quarantillo","fighterB":"Spike Carlyle","weight_class":"CW", "size": 1},
+          {"fighterA":"Nate Maness","fighterB":"Johnny Munoz","weight_class":"FW", "size": 1},
+          {"fighterA":"Jamall Emmers","fighterB":"Vince Cachero","weight_class":"FW", "size": 1},
+          {"fighterA":"Movsar Evloev","fighterB":"Mike Grundy","weight_class":"FW", "size": 1},
+          {"fighterA":"Calvin Kattar","fighterB":"Dan Ige","weight_class":"FW", "size": 1},
+          {"fighterA":"Jimmie Rivera","fighterB":"Cody Stamann","weight_class":"FW", "size": 1},
+          {"fighterA":"Jared Gordon","fighterB":"Chris Fishgold","weight_class":"FW"},
+          {"fighterA":"Youssef Zalal","fighterB":"Jordan Griffin","weight_class":"FW", "size": 1},
+          {"fighterA":"Josh Emmett","fighterB":"Shane Burgos","weight_class":"FW", "size": 1},
+          {"fighterA":"Alex Caceres","fighterB":"Chase Hooper","weight_class":"FW", "size": 1},
+          {"fighterA":"Cody Stamann","fighterB":"Brian Kelleher","weight_class":"FW", "size": 1},
+          {"fighterA":"Song Yadong","fighterB":"Marlon Vera","weight_class":"FW", "size": 1},
+          {"fighterA":"Giga Chikadze","fighterB":"Irwin Rivera","weight_class":"FW", "size": 1},
+          {"fighterA":"Nate Landwehr","fighterB":"Darren Elkins","weight_class":"FW", "size": 1},
+          {"fighterA":"Bryce Mitchell","fighterB":"Charles Rosa","weight_class":"FW", "size": 1},
+          {"fighterA":"Dan Ige","fighterB":"Kevin Aguilar","weight_class":"FW", "size": 1},
+          {"fighterA":"Arnold Allen","fighterB":"Gilbert Melendez","weight_class":"FW", "size": 1},
+          {"fighterA":"Ryan Hall","fighterB":"Darren Elkins","weight_class":"FW", "size": 1},
+          {"fighterA":"Askar Askarov","fighterB":"Alexandre Pantoja","weight_class":"FLW", "size": 1},
+          {"fighterA":"Tim Elliott","fighterB":"Ryan Benoit","weight_class":"FLW", "size": 1},
+          {"fighterA":"Brandon Moreno","fighterB":"Jussier Formiga","weight_class":"FLW", "size": 1},
+          {"fighterA":"David Dvorak","fighterB":"Bruno Silva","weight_class":"FLW", "size": 1},
+          {"fighterA":"Ray Borg","fighterB":"Rogerio Bontorin","weight_class":"FLW", "size": 1},
+          {"fighterA":"Raulian Paiva","fighterB":"Zhalgas Zhamagulov","weight_class":"FLW", "size": 1},
+          {"fighterA":"Kai Kara France","fighterB":"Tyson Nam","weight_class":"FLW", "size": 1},
+          {"fighterA":"Marcin Tybura","fighterB":"Maxim Grishin","weight_class":"HW", "size": 1},
+          {"fighterA":"Curtis Blaydes","fighterB":"Alexander Volkov","weight_class":"HW", "size": 1},
+          {"fighterA":"Andrei Arlovski","fighterB":"Philipe Lins","weight_class":"HW", "size": 1},
+          {"fighterA":"Greg Hardy","fighterB":"Yorgan De Castro","weight_class":"HW", "size": 1},
+          {"fighterA":"Marcin Tybura","fighterB":"Serghei Spivac","weight_class":"HW", "size": 1},
+          {"fighterA":"Devin Clark","fighterB":"Alonzo Menifield","weight_class":"LHW", "size": 1},
+          {"fighterA":"Nikita Krylov","fighterB":"Johnny Walker","weight_class":"LHW", "size": 1},
+          {"fighterA":"Devin Clark","fighterB":"Dequan Townsend","weight_class":"LHW", "size": 1},
+          {"fighterA":"Bobby Green","fighterB":"Lando Vannata","weight_class":"LW", "size": 1},
+          {"fighterA":"Rafael Fiziev","fighterB":"Marc Diakiese","weight_class":"LW", "size": 1},
+          {"fighterA":"Arman Tsarukyan","fighterB":"Davi Ramos","weight_class":"LW", "size": 1},
+          {"fighterA":"Leonardo Santos","fighterB":"Roman Bogatov","weight_class":"LW", "size": 1},
+          {"fighterA":"Dustin Poirier","fighterB":"Dan Hooker","weight_class":"LW", "size": 1},
+          {"fighterA":"Bobby Green","fighterB":"Clay Guida","weight_class":"LW", "size": 1},
+          {"fighterA":"Omar Morales","fighterB":"Gabriel Benitez","weight_class":"LW", "size": 1},
+          {"fighterA":"Francisco Trinaldo","fighterB":"John Makdessi","weight_class":"LW", "size": 1},
+          {"fighterA":"Mark Madsen","fighterB":"Austin Hubbard","weight_class":"LW", "size": 1},
+          {"fighterA":"Luis Pena","fighterB":"Steve Garcia","weight_class":"LW", "size": 1},
+          {"fighterA":"Vinc Pichel","fighterB":"Roosevelt Roberts","weight_class":"LW", "size": 1},
+          {"fighterA":"Jared Gordon","fighterB":"Dan Moret","weight_class":"LW", "size": 1},
+          {"fighterA":"Lando Vannata","fighterB":"Yancy Medeiros","weight_class":"LW", "size": 1},
+          {"fighterA":"Scott Holtzman","fighterB":"Jim Miller","weight_class":"LW", "size": 1},
+          {"fighterA":"Robert Whittaker","fighterB":"Darren Till","weight_class":"MW", "size": 1},
+          {"fighterA":"Brendan Allen","fighterB":"Kyle Daukaus","weight_class":"MW", "size": 1},
+          {"fighterA":"Krzysztof Jotko","fighterB":"Eryk Anders","weight_class":"MW", "size": 1},
+          {"fighterA":"Israel Adesanya","fighterB":"Yoel Romero","weight_class":"MW", "size": 1},
+          {"fighterA":"Kevin Holland","fighterB":"Alessio Di Chirico","weight_class":"MW", "size": 1},
+          {"fighterA":"Deron Winn","fighterB":"Eric Spicely","weight_class":"MW", "size": 1},
+          {"fighterA":"Marvin Vettori","fighterB":"Cezar Ferreira","weight_class":"MW", "size": 1},
+          {"fighterA":"Alex Oliveira","fighterB":"Peter Sobotta","weight_class":"WW", "size": 1},
+          {"fighterA":"Ramazan Emeev","fighterB":"Niklas Stolze","weight_class":"WW", "size": 1},
+          {"fighterA":"Mounir Lazzez","fighterB":"Abdul Razak Alhassan","weight_class":"WW", "size": 1},
+          {"fighterA":"Kamaru Usman","fighterB":"Jorge Masvidal","weight_class":"WW", "size": 1},
+          {"fighterA":"Mike Perry","fighterB":"Mickey Gall","weight_class":"WW", "size": 1},
+          {"fighterA":"Belal Muhammad","fighterB":"Lyman Good","weight_class":"WW", "size": 1},
+          {"fighterA":"Neil Magny","fighterB":"Anthony Rocco Martin","weight_class":"WW", "size": 1},
+          {"fighterA":"Gilbert Burns","fighterB":"Tyron Woodley","weight_class":"WW", "size": 1},
+          {"fighterA":"Daniel Rodriguez","fighterB":"Gabe Green","weight_class":"WW", "size": 1},
+          {"fighterA":"Anthony Pettis","fighterB":"Donald Cerrone","weight_class":"WW", "size": 1},
+          {"fighterA":"Sean Brady","fighterB":"Ismail Naurdiev","weight_class":"WW", "size": 1},
+          {"fighterA":"Jake Matthews","fighterB":"Emil Meek","weight_class":"WW", "size": 1},
+          {"fighterA":"Michael Chiesa","fighterB":"Diego Sanchez","weight_class":"WW", "size": 1},
+          {"fighterA":"Chance Rencountre","fighterB":"Ismail Naurdiev","weight_class":"WW", "size": 1},
+          {"fighterA":"Elizeu Dos Santos","fighterB":"Aleksei Kunchenko","weight_class":"WW", "size": 1},
+          {"fighterA":"Neil Magny","fighterB":"Li Jingliang","weight_class":"WW", "size": 1},
+          {"fighterA":"Demian Maia","fighterB":"Rocco Martin","weight_class":"WW", "size": 1},
+          {"fighterA":"Pannie Kianzad","fighterB":"Bethe Correia","weight_class":"WBW", "size": 1},
+          {"fighterA":"Karol Rosa","fighterB":"Vanessa Melo","weight_class":"WBW", "size": 1},
+          {"fighterA":"Raquel Pennington","fighterB":"Marion Reneau","weight_class":"WBW", "size": 1},
+          {"fighterA":"Sijara Eubanks","fighterB":"Sarah Moras","weight_class":"WBW", "size": 1},
+          {"fighterA":"Bea Malecki","fighterB":"Veronica Macedo","weight_class":"WBW", "size": 1},
+          {"fighterA":"Julia Avila","fighterB":"Pannie Kianzad","weight_class":"WBW", "size": 1},
+          {"fighterA":"Macy Chiasson","fighterB":"Shanna Young","weight_class":"WBW", "size": 1},
+          {"fighterA":"Julianna Pena","fighterB":"Nicco Montano","weight_class":"WBW", "size": 1},
+          {"fighterA":"Amanda Nunes","fighterB":"Felicia Spencer","weight_class":"WBW", "size": 1},
+          {"fighterA":"Taila Santos","fighterB":"Molly McCann","weight_class":"WFLW", "size": 1},
+          {"fighterA":"Lauren Murphy","fighterB":"Roxanne Modafferi","weight_class":"WFLW", "size": 1},
+          {"fighterA":"Cynthia Calvillo","fighterB":"Jessica Eye","weight_class":"WFLW", "size": 1},
+          {"fighterA":"Katlyn Chookagian","fighterB":"Antonina Shevchenko","weight_class":"WFLW", "size": 1},
+          {"fighterA":"Maryna Moroz","fighterB":"Mayra Bueno Silva","weight_class":"WFLW", "size": 1},
+          {"fighterA":"Andrea Lee","fighterB":"Montana De La Rosa","weight_class":"WFLW", "size": 1},
+          {"fighterA":"Molly McCann","fighterB":"Ariane Lipski","weight_class":"WFLW", "size": 1},
+          {"fighterA":"Montana De La Rosa","fighterB":"Mara Romero Borella","weight_class":"WFLW", "size": 1},
+          {"fighterA":"Tecia Torres","fighterB":"Brianna Van Buren","weight_class":"WSW", "size": 1},
+          {"fighterA":"Amanda Ribas","fighterB":"Randa Markos","weight_class":"WSW", "size": 1},
+          {"fighterA":"Angela Hill","fighterB":"Loma Lookboonmee","weight_class":"WSW", "size": 1},
+          {"fighterA":"Ashley Yoder","fighterB":"Syuri Kondo","weight_class":"WSW", "size": 1},
+          {"fighterA":"Yan Xiaonan","fighterB":"Karolina Kowalkiewicz","weight_class":"WSW", "size": 1},
+          {"fighterA":"Caludia Gadelha","fighterB":"Randa Markos","weight_class":"WSW"}
+          ],  
+        },
+        {"name": "S-D", "color": "#FAC3C7", "children": 
+          [
+            { "fighterA": "Carla Esparza", "fighterB": "Marina Rodriguez", "size": 1, "weightclass": "WSW"},
+            { "fighterA": "Rose Namajunas", "fighterB": "Jessica Andrade", "size": 1, "weightclass": "WSW"},
+            { "fighterA": "Claudia Gadelha", "fighterB": "Angela Hill", "size": 1, "weightclass": "WSW"},
+            { "fighterA": "Carla Esparza", "fighterB": "Michelle Waterson", "size": 1, "weightclass": "WSW"},
+            { "fighterA": "Weili Zhang", "fighterB": "Joanna Jedrzejczyk", "size": 1, "weightclass": "WSW"},
+            { "fighterA": "Muslim Salikhov", "fighterB": "Elizeu Zaleski dos Santos", "size": 1, "weightclass": "WW"},
+            { "fighterA": "Alex Oliveira", "fighterB": "Max Griffin", "size": 1, "weightclass": "WW"},
+            { "fighterA": "Karl Roberson", "fighterB": "Wellington Turman", "size": 1, "weightclass": "WW"},
+            { "fighterA": "Charles Rosa", "fighterB": "Kevin Aguilar", "size": 1, "weightclass": "LW"},
+            { "fighterA": "Dan Hooker", "fighterB": "Paul Felder", "size": 1, "weightclass": "LW"},
+            { "fighterA": "Brad Riddell", "fighterB": "Magomed Mustafaev", "size": 1, "weightclass": "LW"},
+            { "fighterA": "Mauricio Rua", "fighterB": "Rogerio Nogueira", "size": 1, "weightclass": "LHW"},
+            { "fighterA": "Ryan Spann", "fighterB": "Sam Alvey", "size": 1, "weightclass": "LHW"},
+            { "fighterA": "Jon Jones", "fighterB": "Thiago Santos", "size": 1, "weightclass": "LHW"},
+            { "fighterA": "Augusto Sakai", "fighterB": "Blagoy Ivanov", "size": 1, "weightclass": "HW"},
+            { "fighterA": "Ben Rothwell", "fighterB": "Ovince Saint Preux ", "size": 1, "weightclass": "HW"},
+            { "fighterA": "Aleksei Oleinik", "fighterB": "Fabricio Werdum", "size": 1, "weightclass": "HW"},
+            { "fighterA": "Alexander Volkanovski", "fighterB": "Max Holloway", "size": 1, "weightclass": "FW"},
+            { "fighterA": "Andre Fili", "fighterB": "Charles Jourdain", "size": 1, "weightclass": "FW"},
+            { "fighterA": "Dan Ige", "fighterB": "Edson Barboza", "size": 1, "weightclass": "FW"},
+            { "fighterA": "Giga Chikadze", "fighterB": "Jamall Emmers", "size": 1, "weightclass": "FW"},
+            { "fighterA": "Ricky Simon", "fighterB": "Ray Borg", "size": 1, "weightclass": "BW"}
+          ],  
+        },
+      ]
+      }, 
+      {
+      "name": "Finish",
+      "color": "#1C4966",
+      "children": [
+          {
+            "name": "KO",
+            "color": "#21567A",
+            "children": [
+              {"name": "Punch", "color": "#2D75A4", "children": 
+                [
+                  { "fighterA": "Priscila Cachoeira", "fighterB": "Shana Dobson", "size": 1, "weightclass": "WFLW"},
+                  { "fighterA": "Megan Anderson", "fighterB": "Norma Dumont", "size": 1, "weightclass": "WFW"},
+                  { "fighterA": "Miguel Baeza", "fighterB": "Matt Brown", "size": 1, "weightclass": "WW"},
+                  { "fighterA": "Gilbert Burns", "fighterB": "Demian Maia", "size": 1, "weightclass": "WW"},
+                  { "fighterA": "Ian Heinisch", "fighterB": "Gerald Meerschaert", "size": 1, "weightclass": "MW"},
+                  { "fighterA": "Francisco Trinaldo", "fighterB": "Jai Herbert", "size": 1, "weightclass": "LW"},
+                  { "fighterA": "Justin Gaethje", "fighterB": "Tony Ferguson", "size": 1, "weightclass": "LW"},
+                  { "fighterA": "Beneil Dariush", "fighterB": "Drakkar Klose", "size": 1, "weightclass": "LW"},
+                  { "fighterA": "Jiri Prochazka", "fighterB": "Volkan Oezdemir", "size": 1, "weightclass": "LHW"},
+                  { "fighterA": "Alonzo Menifield", "fighterB": "Paul Craig", "size": 1, "weightclass": "LHW"},
+                  { "fighterA": "Eryk Anders", "fighterB": "Vinicius Moreira", "size": 1, "weightclass": "LHW"},
+                  { "fighterA": "Dalcha Lungiambula", "fighterB": "Dequan Townsend", "size": 1, "weightclass": "LHW"},
+                  { "fighterA": "Jan Blachowicz", "fighterB": "Luke Rockhold", "size": 1, "weightclass": "LHW"},
+                  { "fighterA": "Jan Blachowicz", "fighterB": "Corey Anderson", "size": 1, "weightclass": "LHW"},
+                  { "fighterA": "Tanner Boser", "fighterB": "Raphael Pessoa", "size": 1, "weightclass": "HW"},
+                  { "fighterA": "Francis Ngannou", "fighterB": "Jairzinho Rozenstruik", "size": 1, "weightclass": "HW"},
+                  { "fighterA": "Francis Ngannou", "fighterB": "Junior Dos Santos", "size": 1, "weightclass": "HW"},
+                  { "fighterA": "Maurice Greene", "fighterB": "Junior Albini", "size": 1, "weightclass": "HW"},
+                  { "fighterA": "Deiveson Figueiredo", "fighterB": "Joseph Benavidez", "size": 1, "weightclass": "FLW"},
+                  { "fighterA": "Raulian Paiva", "fighterB": "Mark De La Rosa", "size": 1, "weightclass": "FLW"},
+                  { "fighterA": "Brian Kelleher", "fighterB": "Hunter Azure", "size": 1, "weightclass": "FW"},
+                  { "fighterA": "Chan Sung Jung", "fighterB": "Renato Moicano", "size": 1, "weightclass": "FW"},
+                  { "fighterA": "Andre Fili", "fighterB": "Sheymon Moraes", "size": 1, "weightclass": "FW"},
+                  { "fighterA": "Cody Garbrandt", "fighterB": "Raphael Assuncao", "size": 1, "weightclass": "BW"},
+                  { "fighterA": "Sean O'Malley", "fighterB": "Eddie Wineland", "size": 1, "weightclass": "BW"},
+                  { "fighterA": "Davey Grant", "fighterB": "Martin Day", "size": 1, "weightclass": "BW"},
+                  { "fighterA": "Danaa Batgerel", "fighterB": "Guido Cannetti", "size": 1, "weightclass": "BW"},
+                  { "fighterA": "Song Yadong", "fighterB": "Alejandro Perez", "size": 1, "weightclass": "BW"},
+                  { "fighterA": "John Dodson", "fighterB": "Nathaniel Wood", "size": 1, "weightclass": "BW"},
+                  { "fighterA": "Urijah Faber", "fighterB": "Ricky Simon", "size": 1, "weightclass": "BW"},
+                  { "fighterA": "Tyson Nam", "fighterB": "Zarrukh Adashev", "size": 1, "weightclass": "BW"},
+                ],  
+              },
+              {"name": "Kick", "color": "#3384BA", "children": 
+                [
+                  { "fighterA": "Roman Dolidze", "fighterB": "Khadis Ibragimov", "size": 1, "weightclass": "LHW"},
+                  { "fighterA": "Alex Perez", "fighterB": "Jussier Formiga", "size": 1, "weightclass": "FLW"},
+                  { "fighterA": "Chris Gutierrez", "fighterB": "Vince Morales", "size": 1, "weightclass": "FW"},
+                  { "fighterA": "Randy Brown", "fighterB": "Bryan Barberena", "size": 1, "weightclass": "WW"},
+                  { "fighterA": "Amanda Nunes", "fighterB": "Holly Holm", "size": 1, "weightclass": "WBW"},
+                ],  
+              },
+              {"name": "Flying Knee", "color": "#3E92CA", "children": 
+                [
+                  { "fighterA": "Jorge Masvidal", "fighterB": "Ben Askren", "size": 1, "weightclass": "WW"},
+                ],  
+              },
+            ]
           },
-          {"name": "U-D",  "children": 
-            [
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "CW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "CW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "CW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
-            ],  
+          {
+            "name": "TKO", "color": "#27658F",
+            "children": [
+              {"name": "Punches", "color": "#539ED0", "children": 
+                [
+                  { "fighterA": "Felicia Spencer", "fighterB": "Zarah Fairn", "size": 1, "weightclass": "WFW"},
+                  { "fighterA": "Julia Avila", "fighterB": "Gina Mazany", "size": 1, "weightclass": "WBW"},
+                  { "fighterA": "Germaine De Randamie", "fighterB": "Aspen Ladd", "size": 1, "weightclass": "WBW"},
+                  { "fighterA": "Khamzat Chimaev", "fighterB": "Rhys McKee", "size": 1, "weightclass": "WW"},
+                  { "fighterA": "Takashi Sato", "fighterB": "Jason Witt", "size": 1, "weightclass": "WW"},
+                  { "fighterA": "Christian Aguilera", "fighterB": "Anthony Ivy", "size": 1, "weightclass": "WW"},
+                  { "fighterA": "Vicente Luque", "fighterB": "Niko Price", "size": 1, "weightclass": "WW"},
+                  { "fighterA": "Song Kenan", "fighterB": "Callan Potter", "size": 1, "weightclass": "WW"},
+                  { "fighterA": "Derek Brunson", "fighterB": "Edmen Shahbazyan", "size": 1, "weightclass": "MW"},
+                  { "fighterA": "Marc-Andre Barriault", "fighterB": "Oskar Piechota", "size": 1, "weightclass": "MW"},
+                  { "fighterA": "Maki Pitolo", "fighterB": "Charles Byrd", "size": 1, "weightclass": "MW"},
+                  { "fighterA": "Brendan Allen", "fighterB": "Tom Breese", "size": 1, "weightclass": "MW"},
+                  { "fighterA": "Justin Jaynes", "fighterB": "Frank Camacho", "size": 1, "weightclass": "LW"},
+                  { "fighterA": "Drew Dober", "fighterB": "Alexander Hernandez", "size": 1, "weightclass": "LW"},
+                  { "fighterA": "Drew Dober", "fighterB": "Marco Polo Reyes", "size": 1, "weightclass": "LW"},
+                  { "fighterA": "Luis Pena", "fighterB": "Matt Wiman", "size": 1, "weightclass": "LW"},
+                  { "fighterA": "Jalin Turner", "fighterB": "Joshua Culibao", "size": 1, "weightclass": "LW"},
+                  { "fighterA": "Glover Teixeira", "fighterB": "Anthony Smith", "size": 1, "weightclass": "LHW"},
+                  { "fighterA": "Magomed Ankalaev", "fighterB": "Ion Cutelaba", "size": 1, "weightclass": "LHW"},
+                  { "fighterA": "Tom Aspinall", "fighterB": "Jake Collier", "size": 1, "weightclass": "HW"},
+                  { "fighterA": "Tanner Boser", "fighterB": "Philipe Lins", "size": 1, "weightclass": "HW"},
+                  { "fighterA": "Alistair Overeem", "fighterB": "Walt Harris", "size": 1, "weightclass": "HW"},
+                  { "fighterA": "Jairzinho Rozenstruik", "fighterB": "Walt Harris", "size": 1, "weightclass": "HW"},
+                  { "fighterA": "Marcos Rogerio De Lima", "fighterB": "Ben Sosoli", "size": 1, "weightclass": "HW"},
+                  { "fighterA": "Joseph Benavidez", "fighterB": "Jussier Formiga", "size": 1, "weightclass": "FLW"},
+                  { "fighterA": "Lerone Murphy", "fighterB": "Ricardo Ramos", "size": 1, "weightclass": "FW"},
+                  { "fighterA": "Spike Carlyle", "fighterB": "Aalon Cruz", "size": 1, "weightclass": "FW"},
+                  { "fighterA": "Zubaira Tukhugov", "fighterB": "Kevin Aguilar", "size": 1, "weightclass": "FW"},
+                  { "fighterA": "Josh Emmett", "fighterB": "Mirsad Bektic", "size": 1, "weightclass": "FW"},
+                  { "fighterA": "Petr Yan", "fighterB": "Jose Aldo", "size": 1, "weightclass": "BW"},
+                  { "fighterA": "Sean O'Malley", "fighterB": "Jose Quinonez", "size": 1, "weightclass": "BW"},
+                ],  
+              },
+              {"name": "Knees", "color": "#69AAD6", "children": 
+                [
+                  { "fighterA": "Vicente Luque", "fighterB": "Randy Brown", "size": 1, "weightclass": "WW"},
+                  { "fighterA": "Jonathan Martinez", "fighterB": "Frankie Saenz", "size": 1, "weightclass": "BW"},
+                  { "fighterA": "Henry Cejudo", "fighterB": "Dominick Cruz", "size": 1, "weightclass": "BW"},
+                  { "fighterA": "Kevin Holland", "fighterB": "Anthony Hernandez", "size": 1, "weightclass": "MW"},
+                  { "fighterA": "Jamahal Hill", "fighterB": "Klidson Abreu", "size": 1, "weightclass": "LHW"},
+                ],  
+              },
+              {"name": "Elbows", "color": "#7EB6DC", "children": 
+                [
+                  { "fighterA": "Chase Sherman", "fighterB": "Ike Villanueva", "size": 1, "weightclass": "HW"},
+                  { "fighterA": "Calvin Kattar", "fighterB": "Jeremy Stephens", "size": 1, "weightclass": "FW"},
+                ],  
+              },
+            ]
           },
-          {"name": "S-D", "children": 
-            [
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-              { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"}
-            ],  
-          },
+          {
+            "name": "Submission", "color": "#2D75A4",
+            "children": [
+             
+                  {"name": "Triangle", "color": "#67A9D5", "children": 
+                    [
+                      { "fighterA": "Paul Craig", "fighterB": "Gadzhimurad Antigulov", "size": 1, "weightclass": "LHW"},
+                      { "fighterA": "Amir Albazi", "fighterB": "Malcolm Gordon", "size": 1, "weightclass": "FW"},
+                    ],  
+                  },
+                  {"name": "RNC", "color": "#78B3DA", "children": 
+                    [
+                      { "fighterA": "Jack Shore", "fighterB": "Aaron Phillips", "size": 1, "weightclass": "BW"},
+                      { "fighterA": "Aljamain Sterling", "fighterB": "Cory Sandhagen", "size": 1, "weightclass": "BW"},
+                      { "fighterA": "Marlon Vera", "fighterB": "Nohelin Hernandez", "size": 1, "weightclass": "BW"},
+                      { "fighterA": "Grant Dawson", "fighterB": "Darrick Minner", "size": 1, "weightclass": "FW"},
+                      { "fighterA": "Deiveson Figueiredo", "fighterB": "Joseph Benavidez", "size": 1, "weightclass": "FLW"},
+                      { "fighterA": "Rodrigo Nascimento", "fighterB": "Don'Tale Mayes", "size": 1, "weightclass": "HW"},
+                      { "fighterA": "Roosevelt Roberts", "fighterB": "Brok Weaver", "size": 1, "weightclass": "LW"},
+                      { "fighterA": "Renato Moicano", "fighterB": "Damir Hadzovic", "size": 1, "weightclass": "LW"},
+                      { "fighterA": "Gerald Meerschaert", "fighterB": "Deron Winn", "size": 1, "weightclass": "MW"},
+                      { "fighterA": "Edmen Shahbazyan", "fighterB": "Jack Marshman", "size": 1, "weightclass": "MW"},
+                      { "fighterA": "Mariya Agapova", "fighterB": "Hannah Cifers", "size": 1, "weightclass": "WFW"},
+                      { "fighterA": "Herbert Burns", "fighterB": "Evan Dunham", "size": 1, "weightclass": "CW"},
+                      { "fighterA": "Marvin Vettori", "fighterB": "Karl Roberson", "size": 1, "weightclass": "MW"},
+                      { "fighterA": "Jesse Ronson", "fighterB": "Nicolas Dalby", "size": 1, "weightclass": "MW"},
+                      { "fighterA": "Gillian Robertson", "fighterB": "Cortney Casey", "size": 1, "weightclass": "WFW"},
+                      { "fighterA": "Amanda Ribas", "fighterB": "Emily Whitmire", "size": 1, "weightclass": "WSW"},
+                    ],  
+                  },
+                  {"name": "Guillotine", "color": "#89BCDF", "children": 
+                    [
+                      { "fighterA": "Joel Alvarez", "fighterB": "Joe Duffy", "size": 1, "weightclass": "LW"},
+                      { "fighterA": "Khama Worthy", "fighterB": "Luis Pena", "size": 1, "weightclass": "LW"},
+                      { "fighterA": "Casey Kenney", "fighterB": "Louis Smolka", "size": 1, "weightclass": "BW"},
+                      { "fighterA": "Charles Oliveira", "fighterB": "Kevin Lee", "size": 1, "weightclass": "LW"},
+                      { "fighterA": "Daniel Rodriguez", "fighterB": "Tim Means", "size": 1, "weightclass": "FW"},
+                      { "fighterA": "Jordan Griffin", "fighterB": "TJ Brown", "size": 1, "weightclass": "WW"},
+                    ],  
+                  },
+                  {"name": "D'Arce", "color": "#9AC6E3", "children": 
+                    [
+                      { "fighterA": "Khamzat Chimaev", "fighterB": "John Phillips", "size": 1, "weightclass": "MW"},
+                      { "fighterA": "Julian Erosa", "fighterB": "Sean Woodson", "size": 1, "weightclass": "CW"},
+                    ],  
+                  },
+                  {"name": "Arm Triangle", "color": "#ABCFE8", "children": 
+                    [
+                      { "fighterA": "Maurice Greene", "fighterB": "Gian Villante", "size": 1, "weightclass": "HW"},
+                      { "fighterA": "Brandon Royval", "fighterB": "Tim Elliott", "size": 1, "weightclass": "FLW"},
+                      { "fighterA": "Rodolfo Vieira", "fighterB": "Saparbeg Safarov", "size": 1, "weightclass": "MW"},
+                    ],  
+                  },
+                  {"name": "Anaconda", "color": "#89BCDF", "children": 
+                    [
+                      { "fighterA": "Makwan Amirkhani", "fighterB": "Danny Henry", "size": 1, "weightclass": "FW"},
+                    ],  
+                  },
+              
+                  {"name": "Kneebar", "color": "#9AC6E3", "children": 
+                    [
+                      { "fighterA": "Ariane Lipski", "fighterB": "Luana Carolina", "size": 1, "weightclass": "WFW"},
+                      { "fighterA": "Mackenzie Dern", "fighterB": "Hannah Cifers", "size": 1, "weightclass": "WSW"}
+                    ],
+                  },
+                  {"name": "Kimura", "color": "#ABCFE8", "children": 
+                    [
+                      { "fighterA": "Jim Crute", "fighterB": "Michal Oleksiejczuk", "size": 1, "weightclass": "LHW"},
+                    ],  
+                  },
+                  {"name": "Heel Hook", "color": "#BCD9ED", "children": 
+                    [
+                      { "fighterA": "Jack Hermansson", "fighterB": "Kelvin Gastelum", "size": 1, "weightclass": "MW"},
+                    ],  
+                  },
+                  {"name": "Armbar", "color": "#CCE2F1", "children": [
+                      { "fighterA": "Jim Miller", "fighterB": "Roosevelt Roberts", "size": 1, "weightclass": "CW"},
+                      { "fighterA": "Fabricio Werdum", "fighterB": "Alexander Gustafsson", "size": 1, "weightclass": "HW"},
+                      { "fighterA": "Jennifer Maia", "fighterB": "Joanne Calderwood", "size": 1, "weightclass": "WFLW"},
+                      { "fighterA": "Liana Jojua", "fighterB": "Diana Belbita", "size": 1, "weightclass": "WFLW"},
+                      { "fighterA": "Amanda Ribas", "fighterB": "Paige VanZant", "size": 1, "weightclass": "WFLW"},
+                      { "fighterA": "Cortney Casey", "fighterB": "Mara Romero Borella", "size": 1, "weightclass": "WFLW"},
+                      { "fighterA": "Kay Hansen", "fighterB": "Jinh Yu Frey", "size": 1, "weightclass": "WSW"}
+                    ],  
+                  },
+                  {"name": "Ankle Lock", "color": "#DDECF6", "children": 
+                    [
+                      { "fighterA": "Thiago Moises", "fighterB": "Michael Johnson", "size": 1, "weightclass": "LW"},
+                    ],  
+                  }
+            ],
+          }
         ]
-        }, 
-        {
-        "name": "Finish",
-        "children": [
-            {
-              "name": "KO",
-              "children": [
-                {"name": "Punch", "children": 
-                  [
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFLW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                  ],  
-                },
-                {"name": "Kick", "children": 
-                  [
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
-                  ],  
-                },
-                {"name": "Flying Knee", "children": 
-                  [
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-                  ],  
-                },
-              ]
-            },
-            {
-              "name": "TKO",
-              "children": [
-                {"name": "Punches", "children": 
-                  [
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WBW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                  ],  
-                },
-                {"name": "Knees", "children": 
-                  [
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-                  ],  
-                },
-                {"name": "Elbows", "children": 
-                  [
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                    { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                  ],  
-                },
-              ]
-            },
-            {
-              "name": "Submission",
-              "children": [
-                {"name": "Choke", "children": 
-                  [
-                    {"name": "Triangle", "children": 
-                      [
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-                      ],  
-                    },
-                    {"name": "RNC", "children": 
-                      [
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "CW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FLW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"},
-                      ],  
-                    },
-                    {"name": "Guillotine", "children": 
-                      [
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "BW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                      ],  
-                    },
-                    {"name": "D'Arce", "children": 
-                      [
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "CW"},
-                      ],  
-                    },
-                    {"name": "Arm Triangle", "children": 
-                      [
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-                      ],  
-                    },
-                    {"name": "Anaconda", "children": 
-                      [
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "FW"},
-                      ],  
-                    },
-                  ],
-                },
-                {"name": "Joint Locks", "children": 
-                  [
-                    {"name": "Kneebar", "children": 
-                      [
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"}
-                      ],
-                    },
-                    {"name": "Kimura", "children": 
-                      [
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LHW"},
-                      ],  
-                    },
-                    {"name": "Heel Hook", "children": 
-                      [
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "MW"},
-                      ],  
-                    },
-                    {"name": "Armbar", "children": [
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "CW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "HW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WFW"},
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "WSW"}
-                      ],  
-                    },
-                    {"name": "Ankle Lock", "children": 
-                      [
-                        { "name": "", "fighterA": "", "fighterB": "", "size": 1, "weightclass": "LW"},
-                      ],  
-                    },
-                  ], 
-                },
-              ],
-            }
-          ]
-      }]
-  };
+    }]
+};
 
-    var width = 800;
-    var height = 800;
+    var width = 700;
+    var height = 700;
     var radius = Math.min(width, height) / 2;
-    var color = d3.scaleOrdinal(d3.schemeCategory20c);
+    var color = d3.scaleOrdinal().range(ordinalColors);
 
     var g = d3.select('svg')
       .attr('width', width)
@@ -406,8 +414,18 @@
       .attr("display", function (d) { return d.depth ? null : "none"; })
       .attr("d", arc)
       .style('stroke', '#fff')
-      .style("fill", function (d) { return color((d.children ? d : d.parent).data.name); })
-      .on("mouseover", mouseover);
+      .style("fill", function (d) { 
+        if (d.data.children) {
+          return d.data.color;
+        } else {
+          if (d.data.fighterA && d.data.fighterB) {
+           return "aquamarine"
+          }
+          return "#DEDEDE";
+        }
+      })
+      .on("mouseover", mouseover)
+      .on("mouseleave", mouseleave);
 
     g.selectAll(".node")
       .append("text")
@@ -419,7 +437,11 @@
       .text(function(d) { return d.parent ? d.data.name : "" }).each(wrap);
 
     let resultTypeTitle = g.select("g").append("svg:text")
-        .attr("text-anchor", "middle");
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .attr("dy", ".4em")
+        .style("fill", "white")
+        .style("font-size", "20px");
 
     function computeTextRotation(d) {
       var angle = (d.x0 + d.x1) / Math.PI * 90;
@@ -427,7 +449,24 @@
     }
 
     function mouseover(element) {
+      console.log(element);
       resultTypeTitle.text(element.data.name);
+      if(!element.data.children) {
+        document.getElementById("winner").innerHTML = "Winner";
+        document.getElementById("loser").innerHTML = "Loser";
+        document.getElementById("left-fighter").innerHTML = element.data.fighterA;
+        document.getElementById("right-fighter").innerHTML = element.data.fighterB;
+      }
+    }
+    
+    function mouseleave(element) {
+      if(!element.data.children) {
+        
+        document.getElementById("winner").innerHTML = "";
+        document.getElementById("loser").innerHTML = "";
+        document.getElementById("left-fighter").innerHTML = "";
+        document.getElementById("right-fighter").innerHTML = "";
+      }
     }
 
     function wrap(d) {
@@ -436,7 +475,7 @@
         self.text("");
       }
       if (d.children) {
-        if (d.children.length < 6 && d.depth > 3) {
+        if (d.children.length < 6 && d.depth > 2) {
           self.text("");
         }
       }
