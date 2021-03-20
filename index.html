@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<head>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <div id="container">
+    <svg id="sunburst"></svg>
+  </div>
+</body>
+
+<script>
+
+    var ufcData = {
+    "name": "2020 UFC Fight Results", "children": [{
+        "name": "Decision",
+        "children": [
+                      {"name": "M-D", "size": 1},
+                      {"name": "U-D", "size": 103},
+                      {"name": "S-D", "size": 22}
+                    ]
+    }, {
+        "name": "Finish",
+        "children": [
+            {
+              "name": "KO",
+              "children": [
+                {"name": "Punch", "size": 31},
+                {"name": "Kick", "size": 5},
+                {"name": "Flying Knee", "size": 1}
+              ]
+            },
+            {
+              "name": "TKO",
+              "children": [
+                {"name": "Punches", "size": 31},
+                {"name": "Knees", "size": 5},
+                {"name": "Elbows", "size": 2},
+              ]
+            },
+            {
+              "name": "Submission",
+              "children": [
+                {"name": "Choke", "children": 
+                  [
+                    {"name": "Triangle", "size": 2},
+                    {"name": "RNC", "size": 16},
+                    {"name": "Guillotine", "size": 8},
+                    {"name": "D'Arce", "size": 2},
+                    {"name": "Arm Triangle", "size": 3},
+                    {"name": "Anaconda", "size": 1}
+                  ],
+                },
+                {"name": "Joint Locks", "children": 
+                  [
+                    {"name": "Kneebar", "size": 2},
+                    {"name": "Kimura", "size": 1},
+                    {"name": "Heel Hook", "size": 1},
+                    {"name": "Armbar", "size": 7},
+                    {"name": "Ankle Lock", "size": 1}
+                  ], 
+                },
+              ],
+            }
+          ]
+      }]
+  };
+
+    var width = 800;
+    var height = 800;
+    var radius = Math.min(width, height) / 2;
+    var color = d3.scaleOrdinal(d3.schemeCategory20b);
+
+    var g = d3.select('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .append('g')
+      .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+
+    var partition = d3.partition()
+      .size([2 * Math.PI, radius]);
+
+    var root = d3.hierarchy(ufcData)
+      .sum(function (d) { return d.size});
+
+    partition(root);
+  
+    var arc = d3.arc()
+      .startAngle(function (d) { return d.x0 })
+      .endAngle(function (d) { return d.x1 })
+      .innerRadius(function (d) { return d.y0 })
+      .outerRadius(function (d) { return d.y1 });
+
+    g.selectAll('g')
+      .data(root.descendants())
+      .enter().append('g').attr("class", "node").append('path')
+      .attr("display", function (d) { return d.depth ? null : "none"; })
+      .attr("d", arc)
+      .style('stroke', '#fff')
+      .style("fill", function (d) { return color((d.children ? d : d.parent).data.name); })
+      .on("mouseover", mouseover);
+
+    g.selectAll(".node")
+      .append("text")
+      .attr("transform", function(d) {
+          return "translate(" + arc.centroid(d) + ")rotate(" + computeTextRotation(d) + ")"; 
+      })
+      .attr("dx", "-20")
+      .attr("dy", ".5em")
+      .text(function(d) { return d.parent ? d.data.name : "" }).each(wrap);
+
+    let resultTypeTitle = g.select("g").append("svg:text")
+        .attr("text-anchor", "middle");
+
+    function computeTextRotation(d) {
+      var angle = (d.x0 + d.x1) / Math.PI * 90;
+      return (angle < 120 || angle > 270) ? angle : angle + 180;
+    }
+
+    function mouseover(element) {
+      resultTypeTitle.text(element.data.name);
+    }
+
+    function wrap(d) {
+      let self = d3.select(this);
+      if ((d.data.size < 6 && d.depth > 2) || (d.data.size < 3 && d.depth <= 2)) {
+        self.text("");
+      }
+    }
+
+</script>
