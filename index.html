@@ -5,6 +5,7 @@
 </head>
 <body>
   <div id="container">
+    <h1>2020 UFC Bout Results</h1>
     <svg id="sunburst"></svg>
   </div>
 </body>
@@ -69,7 +70,7 @@
     var width = 800;
     var height = 800;
     var radius = Math.min(width, height) / 2;
-    var color = d3.scaleOrdinal(d3.schemeCategory20b);
+    var color = d3.scaleOrdinal(d3.schemeCategory20c);
 
     var g = d3.select('svg')
       .attr('width', width)
