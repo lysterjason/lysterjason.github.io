@@ -1,0 +1,53 @@
+{ "name": "2020 UFC Fight Results", "children": [{
+    "name": "Decision",
+    "children": [
+      {"name": "M-D", "size": 1},
+      {"name": "U-D", "size": 103},
+      {"name": "S-D", "size": 22}
+    ]
+    }, {
+    "name": "Finish",
+    "children": [
+        {
+          "name": "KO",
+          "children": [
+            {"name": "Punch", "size": 31},
+            {"name": "Kick", "size": 5},
+            {"name": "Flying Knee", "size": 1}
+          ]
+        },
+        {
+          "name": "TKO",
+          "children": [
+            {"name": "Punches", "size": 31},
+            {"name": "Knees", "size": 5},
+            {"name": "Elbows", "size": 2}
+          ]
+        },
+        {
+          "name": "Submission",
+          "children": [
+            {"name": "Choke", "children": 
+              [
+                {"name": "Triangle", "size": 2},
+                {"name": "RNC", "size": 16},
+                {"name": "Guillotine", "size": 8},
+                {"name": "D'Arce", "size": 2},
+                {"name": "Arm Triangle", "size": 3},
+                {"name": "Anaconda", "size": 1}
+              ]
+            },
+            {"name": "Joint Locks", "children": 
+              [
+                {"name": "Kneebar", "size": 2},
+                {"name": "Kimura", "size": 1},
+                {"name": "Heel Hook", "size": 1},
+                {"name": "Armbar", "size": 7},
+                {"name": "Ankle Lock", "size": 1}
+              ]
+            }
+          ]
+        }
+      ]
+  }]
+}
