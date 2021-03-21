@@ -1,0 +1,33 @@
+#container {
+  height: 100%;
+}
+
+#sunburst {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+html, body {
+  height: 100%;  
+}
+
+text {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.menu {
+  margin-left: 1%;
+  margin-top: 2%;
+}
+
+.main-title {
+  text-align: center;
+}

@@ -19,17 +19,9 @@
       <button type="button" class="btn btn-secondary" onclick="location.href='./iteration2.html'">Iteration #2</button>
       <button type="button" class="btn btn-secondary" onclick="location.href='./index.html'">Iteration #3 (Final)</button>
     </div>
-    <h1 class="main-title">2020 UFC Bout Results</h1>
-    <div class="left">
-      <h1 class="title" id="winner"></h1>
-      <h3 id="left-fighter"></h3>
-    </div>
+    <h1 class="main-title">2020 UFC Bout Results - Iteration #2</h1>
     <div id="container">
       <svg id="sunburst"></svg>
-    </div>
-    <div class="right">
-      <h1 class="title" id="loser"></h1>
-      <h3 id="right-fighter"></h3>
     </div>
   </div>
 </body>
@@ -426,13 +418,7 @@
       .attr("display", function (d) { return d.depth ? null : "none"; })
       .attr("d", arc)
       .style('stroke', '#fff')
-      .style("fill", function (d) { 
-        if (d.data.children) {
-          return d.data.color;
-        } else {
-          return "#DEDEDE";
-        }
-      })
+      .style("fill", function (d) { return color((d.children ? d : d.parent).data.name); })
       .on("mouseover", mouseover)
       .on("mouseleave", mouseleave);
 
@@ -459,28 +445,10 @@
 
     function mouseover(element) {
       resultTypeTitle.text(element.data.name);
-
-      if(!element.data.children) {
-        resultTypeTitle.text(element.data.type);
-        d3.select(this)
-          .style("opacity", 0);
-        document.getElementById("winner").innerHTML = "Winner";
-        document.getElementById("loser").innerHTML = "Loser";
-        document.getElementById("left-fighter").innerHTML = element.data.fighterA;
-        document.getElementById("right-fighter").innerHTML = element.data.fighterB;
-      }
     }
     
     function mouseleave(element) {
       resultTypeTitle.text("");
-      if(!element.data.children) {
-        d3.select(this)
-          .style("opacity", 1);
-        document.getElementById("winner").innerHTML = "";
-        document.getElementById("loser").innerHTML = "";
-        document.getElementById("left-fighter").innerHTML = "";
-        document.getElementById("right-fighter").innerHTML = "";
-      }
     }
 
     function wrap(d) {

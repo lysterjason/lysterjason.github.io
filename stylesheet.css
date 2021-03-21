@@ -12,6 +12,10 @@ html {
   position: fixed;
 }
 
+.main-title {
+  text-align: center;
+}
+
 #container {
   position: absolute;
   top: 50%;
@@ -19,7 +23,7 @@ html {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 0;
-  right: 0;
+  right: 0; 
   margin: auto;
   text-align: center;
   font-family: 'Proza Libre', sans-serif;
@@ -30,14 +34,14 @@ html {
   text-decoration: underline;
   float: left;
   margin-left: 12.5%;
-  margin-top: 20%;
+  margin-top: 15%;
   text-align: center;
 }
 
 .right {
   float: right;
   margin-right: 12.5%;
-  margin-top: 20%;
+  margin-top: 15%;
   text-align: center;
 }
 
@@ -49,4 +53,9 @@ h1, h2, h3, h4, h5, p {
 text {
   font-family: 'Proza Libre', sans-serif;
   font-size: 12px;
+}
+
+.menu {
+  margin-left: 1%;
+  margin-top: 2%;
 }
