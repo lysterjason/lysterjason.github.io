@@ -1,250 +1,248 @@
 R_fighter,B_fighter,R_odds,B_odds,Winner,title_bout,weight_class,finish,finish_details,finish_round,total_fight_time_secs
-Derek Brunson,Edmen Shahbazyan,275,-360,Red,FALSE,Middleweight,KO/TKO,Punches,3,626
-Joanne Calderwood,Jennifer Maia,-162,130,Blue,FALSE,Women's Flyweight,SUB,Armbar,1,269
-Vicente Luque,Randy Brown,-200,160,Red,FALSE,Welterweight,KO/TKO,Knee,2,596
-Lando Vannata,Bobby Green,-162,130,Blue,FALSE,Lightweight,U-DEC,,3,900
-Frankie Saenz,Jonathan Martinez,200,-250,Blue,FALSE,Bantamweight,KO/TKO,Knee,3,657
-Johnny Munoz,Nate Maness,110,-137,Blue,FALSE,Featherweight,U-DEC,,3,900
-Jamall Emmers,Vince Cachero,-360,265,Red,FALSE,Featherweight,U-DEC,,3,900
-Robert Whittaker,Darren Till,-130,107,Red,FALSE,Middleweight,U-DEC,,5,1500
-Mauricio Rua,Rogerio Nogueira,-190,150,Red,FALSE,Light Heavyweight,S-DEC,,3,900
-Fabricio Werdum,Alexander Gustafsson,260,-335,Red,FALSE,Heavyweight,SUB,Armbar,1,150
-Carla Esparza,Marina Rodriguez,145,-182,Red,FALSE,Women's Strawweight,S-DEC,,3,900
-Paul Craig,Gadzhimurad Antigulov,-137,110,Red,FALSE,Light Heavyweight,SUB,Triangle Choke,1,126
-Alex Oliveira,Peter Sobotta,-182,145,Red,FALSE,Welterweight,U-DEC,,3,900
-Khamzat Chimaev,Rhys McKee,-1250,700,Red,FALSE,Welterweight,KO/TKO,Punches,1,189
-Francisco Trinaldo,Jai Herbert,-134,108,Red,FALSE,Lightweight,KO/TKO,Punch,3,450
-Nicolas Dalby,Jesse Ronson,-265,205,Blue,FALSE,Welterweight,SUB,Rear Naked Choke,1,168
-Tom Aspinall,Jake Collier,-278,220,Red,FALSE,Heavyweight,KO/TKO,Punches,1,45
-Movsar Evloev,Mike Grundy,-200,161,Red,FALSE,Featherweight,U-DEC,,3,900
-Tanner Boser,Raphael Pessoa,-278,220,Red,FALSE,Heavyweight,KO/TKO,Punch,2,456
-Bethe Correia,Pannie Kianzad,131,-162,Blue,FALSE,Women's Bantamweight,U-DEC,,3,900
-Ramazan Emeev,Niklas Stolze,-400,300,Red,FALSE,Welterweight,U-DEC,,3,900
-Nathaniel Wood,John Castaneda,-455,320,Red,FALSE,Bantamweight,U-DEC,,3,900
-Deiveson Figueiredo,Joseph Benavidez,-225,180,Red,TRUE,Flyweight,SUB,Rear Naked Choke,1,288
-Jack Hermansson,Kelvin Gastelum,-112,-112,Red,FALSE,Middleweight,SUB,Heel Hook,1,78
-Marc Diakiese,Rafael Fiziev,-167,135,Blue,FALSE,Lightweight,U-DEC,,3,900
-Ariane Lipski,Luana Carolina,-125,100,Red,FALSE,Women's Flyweight,SUB,Kneebar,1,88
-Alexandre Pantoja,Askar Askarov,-210,165,Blue,FALSE,Flyweight,U-DEC,,3,900
-Roman Dolidze,Khadis Ibragimov,-167,135,Red,FALSE,Light Heavyweight,KO/TKO,Kick,1,255
-Grant Dawson,Nad Narimani,-250,195,Red,FALSE,Catch Weight,U-DEC,,3,900
-Joe Duffy,Joel Alvarez,-335,250,Blue,FALSE,Lightweight,SUB,Guillotine Choke,1,145
-Brett Johns,Montel Jackson,170,-215,Red,FALSE,Bantamweight,U-DEC,,3,900
-Malcolm Gordon,Amir Albazi,135,-167,Blue,FALSE,Flyweight,SUB,Triangle Choke,1,282
-Davi Ramos,Arman Tsarukyan,160,-200,Blue,FALSE,Lightweight,U-DEC,,3,900
-Carlos Felipe,Serghei Spivac,140,-177,Blue,FALSE,Heavyweight,M-DEC,,3,900
-Calvin Kattar,Dan Ige,-286,220,Red,FALSE,Featherweight,U-DEC,,5,1500
-Tim Elliott,Ryan Benoit,-141,112,Red,FALSE,Flyweight,U-DEC,,3,900
-Jimmie Rivera,Cody Stamann,-141,112,Red,FALSE,Featherweight,U-DEC,,3,900
-Molly McCann,Taila Santos,-152,120,Blue,FALSE,Women's Flyweight,U-DEC,,3,900
-Abdul Razak Alhassan,Mounir Lazzez,-345,260,Blue,FALSE,Welterweight,U-DEC,,3,900
-John Phillips,Khamzat Chimaev,271,-375,Blue,FALSE,Middleweight,SUB,D'Arce Choke,2,372
-Ricardo Ramos,Lerone Murphy,-162,130,Blue,FALSE,Featherweight,KO/TKO,Punches,1,258
-Modestas Bukauskas,Andreas Michailidis,-177,140,Red,FALSE,Light Heavyweight,KO/TKO,,1,300
-Jared Gordon,Chris Fishgold,-143,115,Red,FALSE,Featherweight,U-DEC,,3,900
-Diana Belbita,Liana Jojua,-195,155,Blue,FALSE,Women's Flyweight,SUB,Armbar,1,163
-Jack Shore,Aaron Phillips,-715,475,Red,FALSE,Bantamweight,SUB,Rear Naked Choke,2,449
-Kamaru Usman,Jorge Masvidal,-240,190,Red,TRUE,Welterweight,U-DEC,,5,1500
-Alexander Volkanovski,Max Holloway,-210,170,Red,TRUE,Featherweight,S-DEC,,5,1500
-Petr Yan,Jose Aldo,-215,175,Red,TRUE,Bantamweight,KO/TKO,Punches,5,1404
-Jessica Andrade,Rose Namajunas,175,-215,Blue,FALSE,Women's Strawweight,S-DEC,,3,900
-Amanda Ribas,Paige VanZant,-770,500,Red,FALSE,Women's Flyweight,SUB,Armbar,1,141
-Volkan Oezdemir,Jiri Prochazka,-159,129,Blue,FALSE,Light Heavyweight,KO/TKO,Punch,2,349
-Elizeu Zaleski dos Santos,Muslim Salikhov,108,-134,Blue,FALSE,Welterweight,S-DEC,,3,900
-Makwan Amirkhani,Danny Henry,-215,170,Red,FALSE,Featherweight,SUB,Anaconda Choke,1,195
-Leonardo Santos,Roman Bogatov,-177,145,Red,FALSE,Lightweight,U-DEC,,3,900
-Marcin Tybura,Maxim Grishin,-112,-112,Red,FALSE,Heavyweight,U-DEC,,3,900
-Raulian Paiva,Zhalgas Zhamagulov,-180,142,Red,FALSE,Flyweight,,,,
-Karol Rosa,Vanessa Melo,-250,195,Red,FALSE,Women's Bantamweight,U-DEC,,3,900
-Martin Day,Davey Grant,-162,130,Blue,FALSE,Bantamweight,KO/TKO,Punch,3,758
-Dustin Poirier,Dan Hooker,-225,180,Red,FALSE,Lightweight,U-DEC,,5,1500
-Mike Perry,Mickey Gall,-315,235,Red,FALSE,Welterweight,U-DEC,,3,900
-Brendan Allen,Kyle Daukaus,-305,235,Red,FALSE,Middleweight,U-DEC,,3,900
-Gian Villante,Maurice Greene,180,-230,Blue,FALSE,Heavyweight,SUB,Arm Triangle,3,824
-Luis Pena,Khama Worthy,-250,195,Blue,FALSE,Lightweight,SUB,Guillotine Choke,3,773
-Mara Romero Borella,Miranda Maverick,230,-305,Red,FALSE,Women's Flyweight,,,,
-Philipe Lins,Tanner Boser,-112,-112,Blue,FALSE,Heavyweight,KO/TKO,Punches,1,161
-Sean Woodson,Julian Erosa,-455,325,Blue,FALSE,Catch Weight,SUB,D'Arce Choke,3,764
-Takashi Sato,Jason Witt,-278,215,Red,FALSE,Welterweight,KO/TKO,Punches,1,48
-Kay Hansen,Jinh Yu Frey,-175,138,Red,FALSE,Women's Strawweight,SUB,Armbar,3,746
-Jordan Griffin,Youssef Zalal,-106,-114,Blue,FALSE,Featherweight,U-DEC,,3,900
-Curtis Blaydes,Alexander Volkov,-400,325,Red,FALSE,Heavyweight,U-DEC,,5,1500
-Josh Emmett,Shane Burgos,120,-140,Red,FALSE,Featherweight,U-DEC,,3,900
-Raquel Pennington,Marion Reneau,-160,140,Red,FALSE,Women's Bantamweight,U-DEC,,3,900
-Belal Muhammad,Lyman Good,-130,110,Red,FALSE,Welterweight,U-DEC,,3,900
-Jim Miller,Roosevelt Roberts,200,-240,Red,FALSE,Catch Weight,SUB,Armbar,1,145
-Clay Guida,Bobby Green,195,-235,Blue,FALSE,Lightweight,U-DEC,,3,900
-Tecia Torres,Brianna Van Buren,175,-210,Red,FALSE,Women's Strawweight,U-DEC,,3,900
-Marc-Andre Barriault,Oskar Piechota,100,-120,Red,FALSE,Middleweight,KO/TKO,Punches,2,590
-Cortney Casey,Gillian Robertson,100,-120,Blue,FALSE,Women's Flyweight,SUB,Rear Naked Choke,3,876
-Frank Camacho,Justin Jaynes,-340,280,Blue,FALSE,Lightweight,KO/TKO,Punches,1,41
-Roxanne Modafferi,Lauren Murphy,-125,105,Blue,FALSE,Women's Flyweight,U-DEC,,3,900
-Austin Hubbard,Max Rohskopf,160,-185,Red,FALSE,Lightweight,KO/TKO,,2,600
-Jessica Eye,Cynthia Calvillo,120,-130,Blue,FALSE,Women's Flyweight,U-DEC,,5,1500
-Karl Roberson,Marvin Vettori,210,-230,Blue,FALSE,Middleweight,SUB,Rear Naked Choke,1,257
-Charles Rosa,Kevin Aguilar,170,-185,Red,FALSE,Lightweight,S-DEC,,3,900
-Andre Fili,Charles Jourdain,-220,200,Red,FALSE,Featherweight,S-DEC,,3,900
-Jordan Espinosa,Mark De La Rosa,-167,157,Red,FALSE,Bantamweight,U-DEC,,3,900
-Mariya Agapova,Hannah Cifers,-335,305,Red,FALSE,Women's Flyweight,SUB,Rear Naked Choke,1,162
-Merab Dvalishvili,Gustavo Lopez,-800,635,Red,FALSE,Catch Weight,U-DEC,,3,900
-Julia Avila,Gina Mazany,-575,485,Red,FALSE,Women's Bantamweight,KO/TKO,Punches,1,22
-Tyson Nam,Zarrukh Adashev,-135,125,Red,FALSE,Bantamweight,KO/TKO,Punch,1,32
-Anthony Ivy,Christian Aguilera,-185,170,Blue,FALSE,Welterweight,KO/TKO,Punches,1,59
-Amanda Nunes,Felicia Spencer,-600,450,Red,TRUE,Women's Featherweight,U-DEC,,5,1500
-Raphael Assuncao,Cody Garbrandt,120,-140,Blue,FALSE,Bantamweight,KO/TKO,Punch,2,599
-Aljamain Sterling,Cory Sandhagen,-115,-105,Red,FALSE,Bantamweight,SUB,Rear Naked Choke,1,88
-Neil Magny,Anthony Rocco Martin,-135,115,Red,FALSE,Welterweight,U-DEC,,3,900
-Eddie Wineland,Sean O'Malley,400,-500,Blue,FALSE,Bantamweight,KO/TKO,Punch,1,114
-Alex Caceres,Chase Hooper,168,-195,Red,FALSE,Featherweight,U-DEC,,3,900
-Ian Heinisch,Gerald Meerschaert,-130,110,Red,FALSE,Middleweight,KO/TKO,Punch,1,74
-Cody Stamann,Brian Kelleher,-250,210,Red,FALSE,Featherweight,U-DEC,,3,900
-Charles Byrd,Maki Pitolo,-175,155,Blue,FALSE,Middleweight,KO/TKO,Punches,2,370
-Jussier Formiga,Alex Perez,115,-135,Blue,FALSE,Flyweight,KO/TKO,Kick,1,246
-Alonzo Menifield,Devin Clark,-225,185,Blue,FALSE,Light Heavyweight,U-DEC,,3,900
-Evan Dunham,Herbert Burns,185,-225,Blue,FALSE,Catch Weight,SUB,Rear Naked Choke,1,80
-Tyron Woodley,Gilbert Burns,-170,150,Blue,FALSE,Welterweight,U-DEC,,5,1500
-Blagoy Ivanov,Augusto Sakai,-105,-115,Blue,FALSE,Heavyweight,S-DEC,,3,900
-Billy Quarantillo,Spike Carlyle,-130,110,Red,FALSE,Catch Weight,U-DEC,,3,900
-Roosevelt Roberts,Brok Weaver,-360,300,Red,FALSE,Lightweight,SUB,Rear Naked Choke,2,506
-Mackenzie Dern,Hannah Cifers,-420,335,Red,FALSE,Women's Strawweight,SUB,Kneebar,1,156
-Katlyn Chookagian,Antonina Shevchenko,110,-130,Red,FALSE,Women's Flyweight,U-DEC,,3,900
-Daniel Rodriguez,Gabe Green,-335,275,Red,FALSE,Welterweight,U-DEC,,3,900
-Jamahal Hill,Klidson Abreu,-117,-103,Red,FALSE,Light Heavyweight,KO/TKO,Knee,1,111
-Tim Elliott,Brandon Royval,-162,142,Blue,FALSE,Flyweight,SUB,Arm Triangle,2,498
-Louis Smolka,Casey Kenney,230,-270,Blue,FALSE,Bantamweight,SUB,Guillotine Choke,1,183
-Chris Gutierrez,Vince Morales,-110,-110,Red,FALSE,Featherweight,KO/TKO,Kick,2,567
-Alistair Overeem,Walt Harris,135,-155,Red,FALSE,Heavyweight,KO/TKO,Punches,2,480
-Claudia Gadelha,Angela Hill,-255,215,Red,FALSE,Women's Strawweight,S-DEC,,3,900
-Dan Ige,Edson Barboza,112,-132,Red,FALSE,Featherweight,S-DEC,,3,900
-Krzysztof Jotko,Eryk Anders,-105,-105,Red,FALSE,Middleweight,U-DEC,,3,900
-Song Yadong,Marlon Vera,-200,170,Red,FALSE,Featherweight,U-DEC,,3,900
-Miguel Baeza,Matt Brown,-155,-155,Red,FALSE,Welterweight,KO/TKO,Punch,2,318
-Kevin Holland,Anthony Hernandez,-110,-110,Red,FALSE,Middleweight,KO/TKO,Knees,1,39
-Giga Chikadze,Irwin Rivera,-420,335,Red,FALSE,Featherweight,U-DEC,,3,900
-Nate Landwehr,Darren Elkins,100,-120,Red,FALSE,Featherweight,U-DEC,,3,900
-Cortney Casey,Mara Romero Borella,-185,160,Red,FALSE,Women's Flyweight,SUB,Armbar,1,216
-Rodrigo Nascimento,Don'Tale Mayes,-115,-105,Red,FALSE,Heavyweight,SUB,Rear Naked Choke,2,425
-Anthony Smith,Glover Teixeira,-175,155,Blue,FALSE,Light Heavyweight,KO/TKO,Punches,5,1264
-Ben Rothwell,Ovince Saint Preux,112,-132,Red,FALSE,Heavyweight,S-DEC,,3,900
-Alexander Hernandez,Drew Dober,100,-120,Blue,FALSE,Lightweight,KO/TKO,Punches,2,565
-Ricky Simon,Ray Borg,-170,150,Red,FALSE,Bantamweight,S-DEC,,3,900
-Andrei Arlovski,Philipe Lins,130,-150,Red,FALSE,Heavyweight,U-DEC,,3,900
-Michael Johnson,Thiago Moises,-110,-110,Blue,FALSE,Lightweight,SUB,Ankle Lock,2,325
-Sijara Eubanks,Sarah Moras,-370,310,Red,FALSE,Women's Bantamweight,U-DEC,,3,900
-Gabriel Benitez,Omar Morales,160,-185,Blue,FALSE,Lightweight,U-DEC,,3,900
-Hunter Azure,Brian Kelleher,-200,170,Blue,FALSE,Featherweight,KO/TKO,Punch,2,520
-Chase Sherman,Ike Villanueva,-160,140,Red,FALSE,Heavyweight,KO/TKO,Elbow,2,349
-Vicente Luque,Niko Price,-290,245,Red,FALSE,Welterweight,KO/TKO,Punches,3,817
-Bryce Mitchell,Charles Rosa,-155,135,Red,FALSE,Featherweight,U-DEC,,3,900
-Ryan Spann,Sam Alvey,-420,335,Red,FALSE,Light Heavyweight,S-DEC,,3,900
-Anthony Pettis,Donald Cerrone,-135,115,Red,FALSE,Welterweight,U-DEC,,3,900
-Aleksei Oleinik,Fabricio Werdum,270,-330,Red,FALSE,Heavyweight,S-DEC,,3,900
-Carla Esparza,Michelle Waterson,-155,135,Red,FALSE,Women's Strawweight,S-DEC,,3,900
-Uriah Hall,Jacare Souza,115,-135,Red,FALSE,Middleweight,,,,
-Tony Ferguson,Justin Gaethje,-180,158,Blue,TRUE,Lightweight,KO/TKO,Punch,5,1419
-Henry Cejudo,Dominick Cruz,-225,185,Red,TRUE,Bantamweight,KO/TKO,Knee,2,598
-Francis Ngannou,Jairzinho Rozenstruik,-265,225,Red,FALSE,Heavyweight,KO/TKO,Punch,1,20
-Jeremy Stephens,Calvin Kattar,210,-250,Blue,FALSE,Featherweight,KO/TKO,Elbow,2,469
-Greg Hardy,Yorgan De Castro,-200,170,Red,FALSE,Heavyweight,U-DEC,,3,900
-Kevin Lee,Charles Oliveira,-145,135,Blue,FALSE,Lightweight,SUB,Guillotine Choke,3,628
-Demian Maia,Gilbert Burns,160,-170,Blue,FALSE,Welterweight,KO/TKO,Punch,1,154
-Renato Moicano,Damir Hadzovic,-345,315,Red,FALSE,Lightweight,SUB,Rear Naked Choke,1,44
-Johnny Walker,Nikita Krylov,-137,127,Blue,FALSE,Light Heavyweight,U-DEC,,3,900
-Francisco Trinaldo,John Makdessi,-160,150,Red,FALSE,Lightweight,U-DEC,,3,900
-Jussier Formiga,Brandon Moreno,-150,140,Blue,FALSE,Flyweight,U-DEC,,3,900
-Amanda Ribas,Randa Markos,-345,315,Red,FALSE,Women's Strawweight,U-DEC,,3,900
-Elizeu Dos Santos,Aleksei Kunchenko,-122,112,Red,FALSE,Welterweight,,,,
-Mayra Bueno Silva,Maryna Moroz,-140,130,Blue,FALSE,Women's Flyweight,U-DEC,,3,900
-Bruno Silva,David Dvorak,-110,100,Blue,FALSE,Flyweight,U-DEC,,3,900
-Veronica Macedo,Bea Malecki,-155,145,Blue,FALSE,Women's Bantamweight,U-DEC,,3,900
-Israel Adesanya,Yoel Romero,-260,240,Red,TRUE,Middleweight,U-DEC,,5,1500
-Weili Zhang,Joanna Jedrzejczyk,-185,170,Red,TRUE,Women's Strawweight,S-DEC,,5,1500
-Beneil Dariush,Drakkar Klose,-162,152,Red,FALSE,Lightweight,KO/TKO,Punch,2,360
-Neil Magny,Li Jingliang,157,-167,Red,FALSE,Welterweight,,,,
-Alex Oliveira,Max Griffin,-125,115,Red,FALSE,Welterweight,S-DEC,,3,900
-Sean O'Malley,Jose Quinonez,-330,300,Red,FALSE,Bantamweight,KO/TKO,Punches,1,122
-Mark Madsen,Austin Hubbard,-215,195,Red,FALSE,Lightweight,U-DEC,,3,900
-Rodolfo Vieira,Saparbeg Safarov,-570,480,Red,FALSE,Middleweight,SUB,Arm Triangle,1,178
-Gerald Meerschaert,Deron Winn,125,-135,Red,FALSE,Middleweight,SUB,Rear Naked Choke,3,733
-Jamall Emmers,Giga Chikadze,-170,160,Blue,FALSE,Featherweight,S-DEC,,3,900
-Danaa Batgerel,Guido Cannetti,-120,110,Red,FALSE,Bantamweight,KO/TKO,Punch,1,181
-Joseph Benavidez,Deiveson Figueiredo,-150,130,Blue,TRUE,Flyweight,KO/TKO,Punch,2,414
+Diego Sanchez,Michel Pereira,135,-155,Red,FALSE,Welterweight,DQ,,3,789
+Brok Weaver,Kazula Vargas,-270,230,Red,FALSE,Lightweight,DQ,,1,242
 Felicia Spencer,Zarah Fairn,-870,585,Red,FALSE,Women's Featherweight,KO/TKO,Punches,1,217
-Ion Cutelaba,Magomed Ankalaev,185,-225,Blue,FALSE,Light Heavyweight,KO/TKO,Punches,1,38
-Megan Anderson,Norma Dumont,-245,205,Red,FALSE,Women's Featherweight,KO/TKO,Punch,1,211
-Grant Dawson,Darrick Minner,-475,380,Red,FALSE,Featherweight,SUB,Rear Naked Choke,2,398
-Gabriel Silva,Kyler Phillips,-130,110,Blue,FALSE,Bantamweight,U-DEC,,3,900
-Brendan Allen,Tom Breese,110,-130,Red,FALSE,Middleweight,KO/TKO,Punches,1,287
-Luis Pena,Steve Garcia,-270,230,Red,FALSE,Lightweight,U-DEC,,3,900
-Marcin Tybura,Serghei Spivac,100,-120,Red,FALSE,Heavyweight,U-DEC,,3,900
-Jordan Griffin,TJ Brown,-135,115,Red,FALSE,Featherweight,SUB,Guillotine Choke,2,518
-Aalon Cruz,Spike Carlyle,-190,165,Blue,FALSE,Featherweight,KO/TKO,Punches,1,85
-Sean Brady,Ismail Naurdiev,105,-125,Red,FALSE,Welterweight,U-DEC,,3,900
-Paul Felder,Dan Hooker,130,-150,Blue,FALSE,Lightweight,S-DEC,,5,1500
-Jim Crute,Michal Oleksiejczuk,100,-120,Red,FALSE,Light Heavyweight,,,,
-Karolina Kowalkiewicz,Yan Xiaonan,225,-265,Blue,FALSE,Women's Strawweight,,,,
-Ben Sosoli,Marcos Rogerio De Lima,130,-150,Blue,FALSE,Heavyweight,,,,
-Brad Riddell,Magomed Mustafaev,120,-140,Red,FALSE,Lightweight,S-DEC,,3,900
-Kevin Aguilar,Zubaira Tukhugov,-115,-105,Blue,FALSE,Featherweight,KO/TKO,Punches,1,201
-Jalin Turner,Joshua Culibao,-210,175,Red,FALSE,Lightweight,,,,
-Jake Matthews,Emil Meek,-200,170,Red,FALSE,Welterweight,U-DEC,,3,900
-Callan Potter,Song Kenan,170,-200,Blue,FALSE,Welterweight,,,,
-Kai Kara France,Tyson Nam,-260,220,Red,FALSE,Flyweight,,,,
-Loma Lookboonmee,Angela Hill,155,-175,Blue,FALSE,Women's Strawweight,U-DEC,,3,900
+Vicente Luque,Randy Brown,-200,160,Red,FALSE,Welterweight,KO/TKO,Knee,2,596
+Frankie Saenz,Jonathan Martinez,200,-250,Blue,FALSE,Bantamweight,KO/TKO,Knee,3,657
+Julia Avila,Gina Mazany,-575,485,Red,FALSE,Women's Bantamweight,KO/TKO,Punches,1,22
 Priscila Cachoeira,Shana Dobson,180,-220,Red,FALSE,Women's Flyweight,KO/TKO,Punch,1,40
-Francis Ngannou,Junior Dos Santos,-220,180,Red,FALSE,Heavyweight,KO/TKO,Punch,1,71
-Jussier Formiga,Joseph Benavidez,105,-125,Blue,FALSE,Flyweight,KO/TKO,Punches,2,587
-Demian Maia,Rocco Martin,-190,165,Red,FALSE,Welterweight,,,,
-Roosevelt Roberts,Vinc Pichel,-245,205,Blue,FALSE,Lightweight,U-DEC,,3,900
+Germaine De Randamie,Aspen Ladd,100,-120,Red,FALSE,Women's Bantamweight,KO/TKO,Punches,1,16
+Megan Anderson,Norma Dumont,-245,205,Red,FALSE,Women's Featherweight,KO/TKO,Punch,1,211
+Roman Dolidze,Khadis Ibragimov,-167,135,Red,FALSE,Light Heavyweight,KO/TKO,Kick,1,255
+Khamzat Chimaev,Rhys McKee,-1250,700,Red,FALSE,Welterweight,KO/TKO,Punches,1,189
+Modestas Bukauskas,Andreas Michailidis,-177,140,Red,FALSE,Light Heavyweight,KO/TKO,,1,300
+Takashi Sato,Jason Witt,-278,215,Red,FALSE,Welterweight,KO/TKO,Punches,1,48
+Miguel Baeza,Matt Brown,-155,-155,Red,FALSE,Welterweight,KO/TKO,Punch,2,318
+Demian Maia,Gilbert Burns,160,-170,Blue,FALSE,Welterweight,KO/TKO,Punch,1,154
+Anthony Ivy,Christian Aguilera,-185,170,Blue,FALSE,Welterweight,KO/TKO,Punches,1,59
+Vicente Luque,Niko Price,-290,245,Red,FALSE,Welterweight,KO/TKO,Punches,3,817
+Callan Potter,Song Kenan,170,-200,Blue,FALSE,Welterweight,KO/TKO,Punches,1,140
+Derek Brunson,Edmen Shahbazyan,275,-360,Red,FALSE,Middleweight,KO/TKO,Punches,3,626
+Austin Hubbard,Max Rohskopf,160,-185,Red,FALSE,Lightweight,KO/TKO,,2,600
+Marc-Andre Barriault,Oskar Piechota,100,-120,Red,FALSE,Middleweight,KO/TKO,Punches,2,590
+Ian Heinisch,Gerald Meerschaert,-130,110,Red,FALSE,Middleweight,KO/TKO,Punch,1,74
+Charles Byrd,Maki Pitolo,-175,155,Blue,FALSE,Middleweight,KO/TKO,Punches,2,370
+Francisco Trinaldo,Jai Herbert,-134,108,Red,FALSE,Lightweight,KO/TKO,Punch,3,450
+Tony Ferguson,Justin Gaethje,-180,158,Blue,TRUE,Lightweight,KO/TKO,Punch,5,1419
+Beneil Dariush,Drakkar Klose,-162,152,Red,FALSE,Lightweight,KO/TKO,Punch,2,360
+Brendan Allen,Tom Breese,110,-130,Red,FALSE,Middleweight,KO/TKO,Punches,1,287
+Jussier Formiga,Alex Perez,115,-135,Blue,FALSE,Flyweight,KO/TKO,Kick,1,246
+Jamahal Hill,Klidson Abreu,-117,-103,Red,FALSE,Light Heavyweight,KO/TKO,Knee,1,111
+Chris Gutierrez,Vince Morales,-110,-110,Red,FALSE,Featherweight,KO/TKO,Kick,2,567
+Frank Camacho,Justin Jaynes,-340,280,Blue,FALSE,Lightweight,KO/TKO,Punches,1,41
+Volkan Oezdemir,Jiri Prochazka,-159,129,Blue,FALSE,Light Heavyweight,KO/TKO,Punch,2,349
+Kevin Holland,Anthony Hernandez,-110,-110,Red,FALSE,Middleweight,KO/TKO,Knees,1,39
+Alexander Hernandez,Drew Dober,100,-120,Blue,FALSE,Lightweight,KO/TKO,Punches,2,565
 Drew Dober,Marco Polo Reyes,-430,345,Red,FALSE,Lightweight,KO/TKO,Punches,1,67
 Alonzo Menifield,Paul Craig,-350,290,Red,FALSE,Light Heavyweight,KO/TKO,Punch,1,199
-Ricardo Ramos,Journey Newson,-380,315,Red,FALSE,Bantamweight,U-DEC,,3,900
-Eryk Anders,Vinicius Moreira,-300,250,Red,FALSE,Light Heavyweight,KO/TKO,Punch,1,78
-Jared Gordon,Dan Moret,-350,290,Red,FALSE,Lightweight,U-DEC,,3,900
-Dalcha Lungiambula,Dequan Townsend,-420,335,Red,FALSE,Light Heavyweight,KO/TKO,Punch,3,642
-Emily Whitmire,Amanda Ribas,-175,155,Blue,FALSE,Women's Strawweight,SUB,Rear Naked Choke,2,430
-Maurice Greene,Junior Albini,-125,105,Red,FALSE,Heavyweight,KO/TKO,Punch,1,218
-Renato Moicano,Chan Sung Jung,-220,180,Blue,FALSE,Featherweight,KO/TKO,Punch,1,58
-Bryan Barberena,Randy Brown,-235,195,Blue,FALSE,Welterweight,KO/TKO,Kick,3,774
-Andre Ewell,Anderson Dos Santos,-140,120,Red,FALSE,Bantamweight,U-DEC,,3,900
-Andrea Lee,Montana De La Rosa,-185,160,Red,FALSE,Women's Flyweight,U-DEC,,3,900
-Kevin Holland,Alessio Di Chirico,-230,190,Red,FALSE,Middleweight,U-DEC,,3,900
-Dan Ige,Kevin Aguilar,120,-140,Red,FALSE,Featherweight,U-DEC,,3,900
-Ashley Yoder,Syuri Kondo,-140,120,Red,FALSE,Women's Strawweight,U-DEC,,3,900
+Chase Sherman,Ike Villanueva,-160,140,Red,FALSE,Heavyweight,KO/TKO,Elbow,2,349
 Matt Wiman,Luis Pena,315,-380,Blue,FALSE,Lightweight,KO/TKO,Punches,3,674
+Eryk Anders,Vinicius Moreira,-300,250,Red,FALSE,Light Heavyweight,KO/TKO,Punch,1,78
+Henry Cejudo,Dominick Cruz,-225,185,Red,TRUE,Bantamweight,KO/TKO,Knee,2,598
+Dalcha Lungiambula,Dequan Townsend,-420,335,Red,FALSE,Light Heavyweight,KO/TKO,Punch,3,642
+Jeremy Stephens,Calvin Kattar,210,-250,Blue,FALSE,Featherweight,KO/TKO,Elbow,2,469
+Jan Blachowicz,Luke Rockhold,220,-260,Red,FALSE,Light Heavyweight,KO/TKO,Punch,2,399
+Corey Anderson,Jan Blachowicz,-235,195,Blue,FALSE,Light Heavyweight,KO/TKO,Punch,1,188
+Jalin Turner,Joshua Culibao,-210,175,Red,FALSE,Lightweight,KO/TKO,Punches,2,181
+Tanner Boser,Raphael Pessoa,-278,220,Red,FALSE,Heavyweight,KO/TKO,Punch,2,456
+Francis Ngannou,Jairzinho Rozenstruik,-265,225,Red,FALSE,Heavyweight,KO/TKO,Punch,1,20
+Anthony Smith,Glover Teixeira,-175,155,Blue,FALSE,Light Heavyweight,KO/TKO,Punches,5,1264
+Ion Cutelaba,Magomed Ankalaev,185,-225,Blue,FALSE,Light Heavyweight,KO/TKO,Punches,1,38
+Francis Ngannou,Junior Dos Santos,-220,180,Red,FALSE,Heavyweight,KO/TKO,Punch,1,71
+Tom Aspinall,Jake Collier,-278,220,Red,FALSE,Heavyweight,KO/TKO,Punches,1,45
+Philipe Lins,Tanner Boser,-112,-112,Blue,FALSE,Heavyweight,KO/TKO,Punches,1,161
+Alistair Overeem,Walt Harris,135,-155,Red,FALSE,Heavyweight,KO/TKO,Punches,2,480
+Maurice Greene,Junior Albini,-125,105,Red,FALSE,Heavyweight,KO/TKO,Punch,1,218
+Joseph Benavidez,Deiveson Figueiredo,-150,130,Blue,TRUE,Flyweight,KO/TKO,Punch,2,414
 Allen Crowder,Jairzinho Rozenstruik,190,-230,Blue,FALSE,Heavyweight,KO/TKO,Punches,1,9
-Ariane Lipski,Molly McCann,-255,215,Blue,FALSE,Women's Flyweight,U-DEC,,3,900
-Deron Winn,Eric Spicely,-360,300,Red,FALSE,Middleweight,U-DEC,,3,900
-Jon Jones,Thiago Santos,-670,485,Red,TRUE,Light Heavyweight,S-DEC,,5,1500
+Ben Sosoli,Marcos Rogerio De Lima,130,-150,Blue,FALSE,Heavyweight,KO/TKO,Punches,1,90
+Mark De La Rosa,Raulian Paiva,205,-245,Blue,FALSE,Flyweight,KO/TKO,Punch,2,582
+Hunter Azure,Brian Kelleher,-200,170,Blue,FALSE,Featherweight,KO/TKO,Punch,2,520
+Renato Moicano,Chan Sung Jung,-220,180,Blue,FALSE,Featherweight,KO/TKO,Punch,1,58
+Andre Fili,Sheymon Moraes,-160,140,Red,FALSE,Featherweight,KO/TKO,Punch,1,187
+Martin Day,Davey Grant,-162,130,Blue,FALSE,Bantamweight,KO/TKO,Punch,3,758
+Bryan Barberena,Randy Brown,-235,195,Blue,FALSE,Welterweight,KO/TKO,Kick,3,774
+Jussier Formiga,Joseph Benavidez,105,-125,Blue,FALSE,Flyweight,KO/TKO,Punches,2,587
+Ricardo Ramos,Lerone Murphy,-162,130,Blue,FALSE,Featherweight,KO/TKO,Punches,1,258
 Amanda Nunes,Holly Holm,-360,300,Red,TRUE,Women's Bantamweight,KO/TKO,Kick,1,250
 Jorge Masvidal,Ben Askren,180,-220,Red,FALSE,Welterweight,KO/TKO,Flying Knee,1,5
-Jan Blachowicz,Luke Rockhold,220,-260,Red,FALSE,Light Heavyweight,KO/TKO,Punch,2,399
-Diego Sanchez,Michael Chiesa,315,-380,Blue,FALSE,Welterweight,U-DEC,,3,900
-Gilbert Melendez,Arnold Allen,260,-320,Blue,FALSE,Featherweight,U-DEC,,3,900
-Marlon Vera,Nohelin Hernandez,-470,375,Red,FALSE,Bantamweight,SUB,Rear Naked Choke,2,505
-Caludia Gadelha,Randa Markos,-200,170,Red,FALSE,Women's Strawweight,,,,
+Tyson Nam,Zarrukh Adashev,-135,125,Red,FALSE,Bantamweight,KO/TKO,Punch,1,32
+Raphael Assuncao,Cody Garbrandt,120,-140,Blue,FALSE,Bantamweight,KO/TKO,Punch,2,599
+Eddie Wineland,Sean O'Malley,400,-500,Blue,FALSE,Bantamweight,KO/TKO,Punch,1,114
+Danaa Batgerel,Guido Cannetti,-120,110,Red,FALSE,Bantamweight,KO/TKO,Punch,1,181
 Alejandro Perez,Song Yadong,185,-225,Blue,FALSE,Bantamweight,KO/TKO,Punch,1,124
-Edmen Shahbazyan,Jack Marshman,-570,480,Red,FALSE,Middleweight,SUB,Rear Naked Choke,1,72
-Ismail Naurdiev,Chance Rencountre,-570,435,Blue,FALSE,Welterweight,U-DEC,,3,900
-Julia Avila,Pannie Kianzad,-250,210,Red,FALSE,Women's Bantamweight,U-DEC,,3,900
-Corey Anderson,Jan Blachowicz,-235,195,Blue,FALSE,Light Heavyweight,KO/TKO,Punch,1,188
-Diego Sanchez,Michel Pereira,135,-155,Red,FALSE,Welterweight,DQ,,3,789
-Montana De La Rosa,Mara Romero Borella,-175,155,Red,FALSE,Women's Flyweight,U-DEC,,3,900
-Brok Weaver,Kazula Vargas,-270,230,Red,FALSE,Lightweight,DQ,,1,242
-Rogerio Bontorin,Ray Borg,130,-150,Blue,FALSE,Flyweight,U-DEC,,3,900
-Lando Vannata,Yancy Medeiros,-120,100,Red,FALSE,Lightweight,U-DEC,,3,900
-Tim Means,Daniel Rodriguez,-345,285,Blue,FALSE,Welterweight,SUB,Guillotine Choke,2,517
 John Dodson,Nathaniel Wood,130,-150,Red,FALSE,Bantamweight,KO/TKO,Punch,3,616
-Jim Miller,Scott Holtzman,115,-135,Blue,FALSE,Lightweight,U-DEC,,3,900
-Devin Clark,Dequan Townsend,-400,325,Red,FALSE,Light Heavyweight,U-DEC,,3,900
-Casey Kenney,Merab Dvalishvili,150,-170,Blue,FALSE,Bantamweight,U-DEC,,3,900
-Macy Chiasson,Shanna Young,-800,550,Red,FALSE,Women's Bantamweight,U-DEC,,3,900
-Mark De La Rosa,Raulian Paiva,205,-245,Blue,FALSE,Flyweight,KO/TKO,Punch,2,582
-Germaine De Randamie,Aspen Ladd,100,-120,Red,FALSE,Women's Bantamweight,,,,
+Aalon Cruz,Spike Carlyle,-190,165,Blue,FALSE,Featherweight,KO/TKO,Punches,1,85
 Urijah Faber,Ricky Simon,320,-355,Red,FALSE,Bantamweight,KO/TKO,Punch,1,46
-Josh Emmett,Mirsad Bektic,150,-170,Red,FALSE,Featherweight,KO/TKO,Punches,1,265
+Carlos Felipe,Serghei Spivac,140,-177,Blue,FALSE,Heavyweight,M-DEC,,3,900
+Carla Esparza,Marina Rodriguez,145,-182,Red,FALSE,Women's Strawweight,S-DEC,,3,900
+Jessica Andrade,Rose Namajunas,175,-215,Blue,FALSE,Women's Strawweight,S-DEC,,3,900
+Claudia Gadelha,Angela Hill,-255,215,Red,FALSE,Women's Strawweight,S-DEC,,3,900
+Carla Esparza,Michelle Waterson,-155,135,Red,FALSE,Women's Strawweight,S-DEC,,3,900
+Weili Zhang,Joanna Jedrzejczyk,-185,170,Red,TRUE,Women's Strawweight,S-DEC,,5,1500
+Elizeu Zaleski dos Santos,Muslim Salikhov,108,-134,Blue,FALSE,Welterweight,S-DEC,,3,900
+Alex Oliveira,Max Griffin,-125,115,Red,FALSE,Welterweight,S-DEC,,3,900
 Karl Roberson,Wellington Turman,-220,180,Red,FALSE,Middleweight,S-DEC,,3,900
-Marvin Vettori,Cezar Ferreira,-220,180,Red,FALSE,Middleweight,U-DEC,,3,900
-Andre Fili,Sheymon Moraes,-160,140,Red,FALSE,Featherweight,KO/TKO,Punch,1,187
-Julianna Pena,Nicco Montano,-250,210,Red,FALSE,Women's Bantamweight,U-DEC,,3,900
+Charles Rosa,Kevin Aguilar,170,-185,Red,FALSE,Lightweight,S-DEC,,3,900
+Paul Felder,Dan Hooker,130,-150,Blue,FALSE,Lightweight,S-DEC,,5,1500
+Brad Riddell,Magomed Mustafaev,120,-140,Red,FALSE,Lightweight,S-DEC,,3,900
+Mauricio Rua,Rogerio Nogueira,-190,150,Red,FALSE,Light Heavyweight,S-DEC,,3,900
+Ryan Spann,Sam Alvey,-420,335,Red,FALSE,Light Heavyweight,S-DEC,,3,900
+Jon Jones,Thiago Santos,-670,485,Red,TRUE,Light Heavyweight,S-DEC,,5,1500
+Blagoy Ivanov,Augusto Sakai,-105,-115,Blue,FALSE,Heavyweight,S-DEC,,3,900
+Ben Rothwell,Ovince Saint Preux,112,-132,Red,FALSE,Heavyweight,S-DEC,,3,900
+Aleksei Oleinik,Fabricio Werdum,270,-330,Red,FALSE,Heavyweight,S-DEC,,3,900
+Alexander Volkanovski,Max Holloway,-210,170,Red,TRUE,Featherweight,S-DEC,,5,1500
+Andre Fili,Charles Jourdain,-220,200,Red,FALSE,Featherweight,S-DEC,,3,900
+Dan Ige,Edson Barboza,112,-132,Red,FALSE,Featherweight,S-DEC,,3,900
+Jamall Emmers,Giga Chikadze,-170,160,Blue,FALSE,Featherweight,S-DEC,,3,900
+Ricky Simon,Ray Borg,-170,150,Red,FALSE,Bantamweight,S-DEC,,3,900
+Jim Miller,Roosevelt Roberts,200,-240,Red,FALSE,Catch Weight,SUB,Armbar,1,145
+Fabricio Werdum,Alexander Gustafsson,260,-335,Red,FALSE,Heavyweight,SUB,Armbar,1,150
+Paul Craig,Gadzhimurad Antigulov,-137,110,Red,FALSE,Light Heavyweight,SUB,Triangle Choke,1,126
+Jack Shore,Aaron Phillips,-715,475,Red,FALSE,Bantamweight,SUB,Rear Naked Choke,2,449
+Aljamain Sterling,Cory Sandhagen,-115,-105,Red,FALSE,Bantamweight,SUB,Rear Naked Choke,1,88
+Jack Hermansson,Kelvin Gastelum,-112,-112,Red,FALSE,Middleweight,SUB,Heel Hook,1,78
+Ariane Lipski,Luana Carolina,-125,100,Red,FALSE,Women's Flyweight,SUB,Kneebar,1,88
+Joe Duffy,Joel Alvarez,-335,250,Blue,FALSE,Lightweight,SUB,Guillotine Choke,1,145
+Malcolm Gordon,Amir Albazi,135,-167,Blue,FALSE,Flyweight,SUB,Triangle Choke,1,282
+John Phillips,Khamzat Chimaev,271,-375,Blue,FALSE,Middleweight,SUB,D'Arce Choke,2,372
+Joanne Calderwood,Jennifer Maia,-162,130,Blue,FALSE,Women's Flyweight,SUB,Armbar,1,269
+Marlon Vera,Nohelin Hernandez,-470,375,Red,FALSE,Bantamweight,SUB,Rear Naked Choke,2,505
+Diana Belbita,Liana Jojua,-195,155,Blue,FALSE,Women's Flyweight,SUB,Armbar,1,163
+Makwan Amirkhani,Danny Henry,-215,170,Red,FALSE,Featherweight,SUB,Anaconda Choke,1,195
+Gian Villante,Maurice Greene,180,-230,Blue,FALSE,Heavyweight,SUB,Arm Triangle,3,824
+Luis Pena,Khama Worthy,-250,195,Blue,FALSE,Lightweight,SUB,Guillotine Choke,3,773
+Sean Woodson,Julian Erosa,-455,325,Blue,FALSE,Catch Weight,SUB,D'Arce Choke,3,764
+Amanda Ribas,Paige VanZant,-770,500,Red,FALSE,Women's Flyweight,SUB,Armbar,1,141
+Cortney Casey,Mara Romero Borella,-185,160,Red,FALSE,Women's Flyweight,SUB,Armbar,1,216
+Evan Dunham,Herbert Burns,185,-225,Blue,FALSE,Catch Weight,SUB,Rear Naked Choke,1,80
+Grant Dawson,Darrick Minner,-475,380,Red,FALSE,Featherweight,SUB,Rear Naked Choke,2,398
+Deiveson Figueiredo,Joseph Benavidez,-225,180,Red,TRUE,Flyweight,SUB,Rear Naked Choke,1,288
+Rodrigo Nascimento,Don'Tale Mayes,-115,-105,Red,FALSE,Heavyweight,SUB,Rear Naked Choke,2,425
+Roosevelt Roberts,Brok Weaver,-360,300,Red,FALSE,Lightweight,SUB,Rear Naked Choke,2,506
+Renato Moicano,Damir Hadzovic,-345,315,Red,FALSE,Lightweight,SUB,Rear Naked Choke,1,44
+Mackenzie Dern,Hannah Cifers,-420,335,Red,FALSE,Women's Strawweight,SUB,Kneebar,1,156
+Tim Elliott,Brandon Royval,-162,142,Blue,FALSE,Flyweight,SUB,Arm Triangle,2,498
+Louis Smolka,Casey Kenney,230,-270,Blue,FALSE,Bantamweight,SUB,Guillotine Choke,1,183
+Kay Hansen,Jinh Yu Frey,-175,138,Red,FALSE,Women's Strawweight,SUB,Armbar,3,746
+Karl Roberson,Marvin Vettori,210,-230,Blue,FALSE,Middleweight,SUB,Rear Naked Choke,1,257
+Michael Johnson,Thiago Moises,-110,-110,Blue,FALSE,Lightweight,SUB,Ankle Lock,2,325
+Kevin Lee,Charles Oliveira,-145,135,Blue,FALSE,Lightweight,SUB,Guillotine Choke,3,628
+Gerald Meerschaert,Deron Winn,125,-135,Red,FALSE,Middleweight,SUB,Rear Naked Choke,3,733
+Rodolfo Vieira,Saparbeg Safarov,-570,480,Red,FALSE,Middleweight,SUB,Arm Triangle,1,178
+Edmen Shahbazyan,Jack Marshman,-570,480,Red,FALSE,Middleweight,SUB,Rear Naked Choke,1,72
+Nicolas Dalby,Jesse Ronson,-265,205,Blue,FALSE,Welterweight,SUB,Rear Naked Choke,1,168
+Jordan Griffin,TJ Brown,-135,115,Red,FALSE,Featherweight,SUB,Guillotine Choke,2,518
+Cortney Casey,Gillian Robertson,100,-120,Blue,FALSE,Women's Flyweight,SUB,Rear Naked Choke,3,876
+Mariya Agapova,Hannah Cifers,-335,305,Red,FALSE,Women's Flyweight,SUB,Rear Naked Choke,1,162
+Emily Whitmire,Amanda Ribas,-175,155,Blue,FALSE,Women's Strawweight,SUB,Rear Naked Choke,2,430
+Tim Means,Daniel Rodriguez,-345,285,Blue,FALSE,Welterweight,SUB,Guillotine Choke,2,517
+Nathaniel Wood,John Castaneda,-455,320,Red,FALSE,Bantamweight,U-DEC,,3,900
+Brett Johns,Montel Jackson,170,-215,Red,FALSE,Bantamweight,U-DEC,,3,900
+Jordan Espinosa,Mark De La Rosa,-167,157,Red,FALSE,Bantamweight,U-DEC,,3,900
+Gabriel Silva,Kyler Phillips,-130,110,Blue,FALSE,Bantamweight,U-DEC,,3,900
+Ricardo Ramos,Journey Newson,-380,315,Red,FALSE,Bantamweight,U-DEC,,3,900
+Andre Ewell,Anderson Dos Santos,-140,120,Red,FALSE,Bantamweight,U-DEC,,3,900
+Casey Kenney,Merab Dvalishvili,150,-170,Blue,FALSE,Bantamweight,U-DEC,,3,900
+Grant Dawson,Nad Narimani,-250,195,Red,FALSE,Catch Weight,U-DEC,,3,900
+Merab Dvalishvili,Gustavo Lopez,-800,635,Red,FALSE,Catch Weight,U-DEC,,3,900
+Billy Quarantillo,Spike Carlyle,-130,110,Red,FALSE,Catch Weight,U-DEC,,3,900
+Johnny Munoz,Nate Maness,110,-137,Blue,FALSE,Featherweight,U-DEC,,3,900
+Jamall Emmers,Vince Cachero,-360,265,Red,FALSE,Featherweight,U-DEC,,3,900
+Movsar Evloev,Mike Grundy,-200,161,Red,FALSE,Featherweight,U-DEC,,3,900
+Calvin Kattar,Dan Ige,-286,220,Red,FALSE,Featherweight,U-DEC,,5,1500
+Jimmie Rivera,Cody Stamann,-141,112,Red,FALSE,Featherweight,U-DEC,,3,900
+Jared Gordon,Chris Fishgold,-143,115,Red,FALSE,Featherweight,U-DEC,,3,900
+Jordan Griffin,Youssef Zalal,-106,-114,Blue,FALSE,Featherweight,U-DEC,,3,900
+Josh Emmett,Shane Burgos,120,-140,Red,FALSE,Featherweight,U-DEC,,3,900
+Alex Caceres,Chase Hooper,168,-195,Red,FALSE,Featherweight,U-DEC,,3,900
+Cody Stamann,Brian Kelleher,-250,210,Red,FALSE,Featherweight,U-DEC,,3,900
+Song Yadong,Marlon Vera,-200,170,Red,FALSE,Featherweight,U-DEC,,3,900
+Giga Chikadze,Irwin Rivera,-420,335,Red,FALSE,Featherweight,U-DEC,,3,900
+Nate Landwehr,Darren Elkins,100,-120,Red,FALSE,Featherweight,U-DEC,,3,900
+Bryce Mitchell,Charles Rosa,-155,135,Red,FALSE,Featherweight,U-DEC,,3,900
+Dan Ige,Kevin Aguilar,120,-140,Red,FALSE,Featherweight,U-DEC,,3,900
+Gilbert Melendez,Arnold Allen,260,-320,Blue,FALSE,Featherweight,U-DEC,,3,900
 Darren Elkins,Ryan Hall,-115,-105,Blue,FALSE,Featherweight,U-DEC,,3,900
+Alexandre Pantoja,Askar Askarov,-210,165,Blue,FALSE,Flyweight,U-DEC,,3,900
+Tim Elliott,Ryan Benoit,-141,112,Red,FALSE,Flyweight,U-DEC,,3,900
+Jussier Formiga,Brandon Moreno,-150,140,Blue,FALSE,Flyweight,U-DEC,,3,900
+Bruno Silva,David Dvorak,-110,100,Blue,FALSE,Flyweight,U-DEC,,3,900
+Rogerio Bontorin,Ray Borg,130,-150,Blue,FALSE,Flyweight,U-DEC,,3,900
+Raulian Paiva,Zhalgas Zhamagulov,-180,142,Red,FALSE,Flyweight,U-DEC,,3,900
+Kai Kara France,Tyson Nam,-260,220,Red,FALSE,Flyweight,U-DEC,,3,900
+Marcin Tybura,Maxim Grishin,-112,-112,Red,FALSE,Heavyweight,U-DEC,,3,900
+Curtis Blaydes,Alexander Volkov,-400,325,Red,FALSE,Heavyweight,U-DEC,,5,1500
+Andrei Arlovski,Philipe Lins,130,-150,Red,FALSE,Heavyweight,U-DEC,,3,900
+Greg Hardy,Yorgan De Castro,-200,170,Red,FALSE,Heavyweight,U-DEC,,3,900
+Marcin Tybura,Serghei Spivac,100,-120,Red,FALSE,Heavyweight,U-DEC,,3,900
+Alonzo Menifield,Devin Clark,-225,185,Blue,FALSE,Light Heavyweight,U-DEC,,3,900
+Johnny Walker,Nikita Krylov,-137,127,Blue,FALSE,Light Heavyweight,U-DEC,,3,900
+Devin Clark,Dequan Townsend,-400,325,Red,FALSE,Light Heavyweight,U-DEC,,3,900
+Lando Vannata,Bobby Green,-162,130,Blue,FALSE,Lightweight,U-DEC,,3,900
+Marc Diakiese,Rafael Fiziev,-167,135,Blue,FALSE,Lightweight,U-DEC,,3,900
+Davi Ramos,Arman Tsarukyan,160,-200,Blue,FALSE,Lightweight,U-DEC,,3,900
+Leonardo Santos,Roman Bogatov,-177,145,Red,FALSE,Lightweight,U-DEC,,3,900
+Dustin Poirier,Dan Hooker,-225,180,Red,FALSE,Lightweight,U-DEC,,5,1500
+Clay Guida,Bobby Green,195,-235,Blue,FALSE,Lightweight,U-DEC,,3,900
+Gabriel Benitez,Omar Morales,160,-185,Blue,FALSE,Lightweight,U-DEC,,3,900
+Francisco Trinaldo,John Makdessi,-160,150,Red,FALSE,Lightweight,U-DEC,,3,900
+Mark Madsen,Austin Hubbard,-215,195,Red,FALSE,Lightweight,U-DEC,,3,900
+Luis Pena,Steve Garcia,-270,230,Red,FALSE,Lightweight,U-DEC,,3,900
+Roosevelt Roberts,Vinc Pichel,-245,205,Blue,FALSE,Lightweight,U-DEC,,3,900
+Jared Gordon,Dan Moret,-350,290,Red,FALSE,Lightweight,U-DEC,,3,900
+Lando Vannata,Yancy Medeiros,-120,100,Red,FALSE,Lightweight,U-DEC,,3,900
+Jim Miller,Scott Holtzman,115,-135,Blue,FALSE,Lightweight,U-DEC,,3,900
+Robert Whittaker,Darren Till,-130,107,Red,FALSE,Middleweight,U-DEC,,5,1500
+Brendan Allen,Kyle Daukaus,-305,235,Red,FALSE,Middleweight,U-DEC,,3,900
+Krzysztof Jotko,Eryk Anders,-105,-105,Red,FALSE,Middleweight,U-DEC,,3,900
+Israel Adesanya,Yoel Romero,-260,240,Red,TRUE,Middleweight,U-DEC,,5,1500
+Kevin Holland,Alessio Di Chirico,-230,190,Red,FALSE,Middleweight,U-DEC,,3,900
+Deron Winn,Eric Spicely,-360,300,Red,FALSE,Middleweight,U-DEC,,3,900
+Marvin Vettori,Cezar Ferreira,-220,180,Red,FALSE,Middleweight,U-DEC,,3,900
+Alex Oliveira,Peter Sobotta,-182,145,Red,FALSE,Welterweight,U-DEC,,3,900
+Ramazan Emeev,Niklas Stolze,-400,300,Red,FALSE,Welterweight,U-DEC,,3,900
+Abdul Razak Alhassan,Mounir Lazzez,-345,260,Blue,FALSE,Welterweight,U-DEC,,3,900
+Kamaru Usman,Jorge Masvidal,-240,190,Red,TRUE,Welterweight,U-DEC,,5,1500
+Mike Perry,Mickey Gall,-315,235,Red,FALSE,Welterweight,U-DEC,,3,900
+Belal Muhammad,Lyman Good,-130,110,Red,FALSE,Welterweight,U-DEC,,3,900
+Neil Magny,Anthony Rocco Martin,-135,115,Red,FALSE,Welterweight,U-DEC,,3,900
+Tyron Woodley,Gilbert Burns,-170,150,Blue,FALSE,Welterweight,U-DEC,,5,1500
+Daniel Rodriguez,Gabe Green,-335,275,Red,FALSE,Welterweight,U-DEC,,3,900
+Anthony Pettis,Donald Cerrone,-135,115,Red,FALSE,Welterweight,U-DEC,,3,900
+Sean Brady,Ismail Naurdiev,105,-125,Red,FALSE,Welterweight,U-DEC,,3,900
+Jake Matthews,Emil Meek,-200,170,Red,FALSE,Welterweight,U-DEC,,3,900
+Diego Sanchez,Michael Chiesa,315,-380,Blue,FALSE,Welterweight,U-DEC,,3,900
+Ismail Naurdiev,Chance Rencountre,-570,435,Blue,FALSE,Welterweight,U-DEC,,3,900
+Elizeu Dos Santos,Aleksei Kunchenko,-122,112,Red,FALSE,Welterweight,U-DEC,,3,900
+Neil Magny,Li Jingliang,157,-167,Red,FALSE,Welterweight,U-DEC,,3,900
+Demian Maia,Rocco Martin,-190,165,Red,FALSE,Welterweight,U-DEC,,3,900
+Bethe Correia,Pannie Kianzad,131,-162,Blue,FALSE,Women's Bantamweight,U-DEC,,3,900
+Karol Rosa,Vanessa Melo,-250,195,Red,FALSE,Women's Bantamweight,U-DEC,,3,900
+Raquel Pennington,Marion Reneau,-160,140,Red,FALSE,Women's Bantamweight,U-DEC,,3,900
+Sijara Eubanks,Sarah Moras,-370,310,Red,FALSE,Women's Bantamweight,U-DEC,,3,900
+Veronica Macedo,Bea Malecki,-155,145,Blue,FALSE,Women's Bantamweight,U-DEC,,3,900
+Julia Avila,Pannie Kianzad,-250,210,Red,FALSE,Women's Bantamweight,U-DEC,,3,900
+Macy Chiasson,Shanna Young,-800,550,Red,FALSE,Women's Bantamweight,U-DEC,,3,900
+Julianna Pena,Nicco Montano,-250,210,Red,FALSE,Women's Bantamweight,U-DEC,,3,900
+Amanda Nunes,Felicia Spencer,-600,450,Red,TRUE,Women's Featherweight,U-DEC,,5,1500
+Molly McCann,Taila Santos,-152,120,Blue,FALSE,Women's Flyweight,U-DEC,,3,900
+Roxanne Modafferi,Lauren Murphy,-125,105,Blue,FALSE,Women's Flyweight,U-DEC,,3,900
+Jessica Eye,Cynthia Calvillo,120,-130,Blue,FALSE,Women's Flyweight,U-DEC,,5,1500
+Katlyn Chookagian,Antonina Shevchenko,110,-130,Red,FALSE,Women's Flyweight,U-DEC,,3,900
+Mayra Bueno Silva,Maryna Moroz,-140,130,Blue,FALSE,Women's Flyweight,U-DEC,,3,900
+Andrea Lee,Montana De La Rosa,-185,160,Red,FALSE,Women's Flyweight,U-DEC,,3,900
+Ariane Lipski,Molly McCann,-255,215,Blue,FALSE,Women's Flyweight,U-DEC,,3,900
+Montana De La Rosa,Mara Romero Borella,-175,155,Red,FALSE,Women's Flyweight,U-DEC,,3,900
+Tecia Torres,Brianna Van Buren,175,-210,Red,FALSE,Women's Strawweight,U-DEC,,3,900
+Amanda Ribas,Randa Markos,-345,315,Red,FALSE,Women's Strawweight,U-DEC,,3,900
+Jim Crute,Michal Oleksiejczuk,100,-120,Red,FALSE,Light Heavyweight,SUB,Kimura,1,209
+Loma Lookboonmee,Angela Hill,155,-175,Blue,FALSE,Women's Strawweight,U-DEC,,3,900
+Kevin Aguilar,Zubaira Tukhugov,-115,-105,Blue,FALSE,Featherweight,KO/TKO,Punches,1,201
+Josh Emmett,Mirsad Bektic,150,-170,Red,FALSE,Featherweight,KO/TKO,Punches,1,265
+Petr Yan,Jose Aldo,-215,175,Red,TRUE,Bantamweight,KO/TKO,Punches,5,1404
+Ashley Yoder,Syuri Kondo,-140,120,Red,FALSE,Women's Strawweight,U-DEC,,3,900
+Karolina Kowalkiewicz,Yan Xiaonan,225,-265,Blue,FALSE,Women's Strawweight,U-DEC,,3,900
+Caludia Gadelha,Randa Markos,-200,170,Red,FALSE,Women's Strawweight,U-DEC,,3,900
+Sean O'Malley,Jose Quinonez,-330,300,Red,FALSE,Bantamweight,KO/TKO,Punches,1,122
