@@ -474,7 +474,7 @@
 
     function wrap(d) {
       let self = d3.select(this);
-      if ((d.data.size < 6 && d.depth > 2) || (d.data.size < 3 && d.depth <= 2)) {
+      if ((d.data.size <= 7 && d.depth > 2) || (d.data.size < 3 && d.depth <= 2)) {
         self.text("");
       }
       if (d.children) {
