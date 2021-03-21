@@ -439,7 +439,7 @@
     let resultTypeTitle = g.select("g").append("svg:text")
         .attr("text-anchor", "middle")
         .attr("font-weight", "bold")
-        .attr("dy", "4em")
+        .attr("dy", "-.4em")
         .style("fill", "white")
         .style("font-size", "20px");
     
@@ -449,13 +449,11 @@
     }
 
     function mouseover(element) {
-      // let saveTotal = (element.data.total / 242) * 100;
-      // totalPercentage = saveTotal.toFixed(1).toString() + "%";
-      // console.log(totalPercentage);
-      resultTypeTitle.text(element.data.name)
-      //totalPercentage.text(totalPercentage);
+      resultTypeTitle.text(element.data.name);
 
       if(!element.data.children) {
+        d3.select(this)
+          .style("opacity", 0.2);
         document.getElementById("winner").innerHTML = "Winner";
         document.getElementById("loser").innerHTML = "Loser";
         document.getElementById("left-fighter").innerHTML = element.data.fighterA;
@@ -465,6 +463,8 @@
     
     function mouseleave(element) {
       if(!element.data.children) {
+        d3.select(this)
+          .style("opacity", 1);
         document.getElementById("winner").innerHTML = "";
         document.getElementById("loser").innerHTML = "";
         document.getElementById("left-fighter").innerHTML = "";
@@ -474,11 +474,11 @@
 
     function wrap(d) {
       let self = d3.select(this);
-      if ((d.data.size <= 7 && d.depth > 2) || (d.data.size < 3 && d.depth <= 2)) {
+      if ((d.data.size < 7 && d.depth > 2) || (d.data.size < 3 && d.depth <= 2)) {
         self.text("");
       }
       if (d.children) {
-        if (d.children.length < 6 && d.depth > 2) {
+        if ((d.children.length <= 7 && d.depth > 2) || (d.children.length < 3 && d.depth <= 2)) {
           self.text("");
         }
       }
