@@ -12,14 +12,14 @@
 <body>
   <div class="background">
     <div class="left">
-      <h1 class="title" id="winner">Winner</h1>
+      <h1 class="title" id="winner"></h1>
       <h3 id="left-fighter"></h3>
     </div>
     <div id="container">
       <svg id="sunburst"></svg>
     </div>
     <div class="right">
-      <h1 class="title" id="loser">Loser</h1>
+      <h1 class="title" id="loser"></h1>
       <h3 id="right-fighter"></h3>
     </div>
   </div>
@@ -32,13 +32,14 @@
     "name": "2020 UFC Fight Results", "children": [{
       "name": "Decision",
       "color": "#ed2939",
+      "total": 126,
       "children": [
-        {"name": "M-D", "color": "#F6959D", "children": 
+        {"name": "M-D", "color": "#F6959D", "total": 1, "children": 
           [
             { "fighterA": "Serghei Spivac", "fighterB": "Carlos Felipe", "size": 1, "weightclass": "WW"},
           ],  
         },
-        {"name": "U-D", "color": "#F58690", "children": 
+        {"name": "U-D", "color": "#F58690", "total": 103, "children": 
           [
           {"fighterA":"Nathaniel Wood","fighterB":"John Castaneda","weight_class":"BW", "size": 1},
           {"fighterA":"Brett Johns","fighterB":"Montel Jackson","weight_class":"BW", "size": 1},
@@ -145,7 +146,7 @@
           {"fighterA":"Caludia Gadelha","fighterB":"Randa Markos","weight_class":"WSW"}
           ],  
         },
-        {"name": "S-D", "color": "#FAC3C7", "children": 
+        {"name": "S-D", "color": "#FAC3C7", "total": 22, "children": 
           [
             { "fighterA": "Carla Esparza", "fighterB": "Marina Rodriguez", "size": 1, "weightclass": "WSW"},
             { "fighterA": "Rose Namajunas", "fighterB": "Jessica Andrade", "size": 1, "weightclass": "WSW"},
@@ -176,12 +177,14 @@
       {
       "name": "Finish",
       "color": "#1C4966",
+      "total": 116,
       "children": [
           {
             "name": "KO",
+            "total": 37,
             "color": "#21567A",
             "children": [
-              {"name": "Punch", "color": "#2D75A4", "children": 
+              {"name": "Punch", "color": "#2D75A4", "total": 31, "children": 
                 [
                   { "fighterA": "Priscila Cachoeira", "fighterB": "Shana Dobson", "size": 1, "weightclass": "WFLW"},
                   { "fighterA": "Megan Anderson", "fighterB": "Norma Dumont", "size": 1, "weightclass": "WFW"},
@@ -216,7 +219,7 @@
                   { "fighterA": "Tyson Nam", "fighterB": "Zarrukh Adashev", "size": 1, "weightclass": "BW"},
                 ],  
               },
-              {"name": "Kick", "color": "#3384BA", "children": 
+              {"name": "Kick", "color": "#3384BA", "total": 5, "children": 
                 [
                   { "fighterA": "Roman Dolidze", "fighterB": "Khadis Ibragimov", "size": 1, "weightclass": "LHW"},
                   { "fighterA": "Alex Perez", "fighterB": "Jussier Formiga", "size": 1, "weightclass": "FLW"},
@@ -225,7 +228,7 @@
                   { "fighterA": "Amanda Nunes", "fighterB": "Holly Holm", "size": 1, "weightclass": "WBW"},
                 ],  
               },
-              {"name": "Flying Knee", "color": "#3E92CA", "children": 
+              {"name": "Flying Knee", "color": "#3E92CA", "total": 1, "children": 
                 [
                   { "fighterA": "Jorge Masvidal", "fighterB": "Ben Askren", "size": 1, "weightclass": "WW"},
                 ],  
@@ -233,9 +236,9 @@
             ]
           },
           {
-            "name": "TKO", "color": "#27658F",
+            "name": "TKO", "color": "#27658F",  "total": 38,
             "children": [
-              {"name": "Punches", "color": "#539ED0", "children": 
+              {"name": "Punches", "color": "#539ED0", "total": 31, "children": 
                 [
                   { "fighterA": "Felicia Spencer", "fighterB": "Zarah Fairn", "size": 1, "weightclass": "WFW"},
                   { "fighterA": "Julia Avila", "fighterB": "Gina Mazany", "size": 1, "weightclass": "WBW"},
@@ -270,7 +273,7 @@
                   { "fighterA": "Sean O'Malley", "fighterB": "Jose Quinonez", "size": 1, "weightclass": "BW"},
                 ],  
               },
-              {"name": "Knees", "color": "#69AAD6", "children": 
+              {"name": "Knees", "color": "#69AAD6",  "total": 5, "children": 
                 [
                   { "fighterA": "Vicente Luque", "fighterB": "Randy Brown", "size": 1, "weightclass": "WW"},
                   { "fighterA": "Jonathan Martinez", "fighterB": "Frankie Saenz", "size": 1, "weightclass": "BW"},
@@ -279,7 +282,7 @@
                   { "fighterA": "Jamahal Hill", "fighterB": "Klidson Abreu", "size": 1, "weightclass": "LHW"},
                 ],  
               },
-              {"name": "Elbows", "color": "#7EB6DC", "children": 
+              {"name": "Elbows", "color": "#7EB6DC", "total": 2, "children": 
                 [
                   { "fighterA": "Chase Sherman", "fighterB": "Ike Villanueva", "size": 1, "weightclass": "HW"},
                   { "fighterA": "Calvin Kattar", "fighterB": "Jeremy Stephens", "size": 1, "weightclass": "FW"},
@@ -288,16 +291,16 @@
             ]
           },
           {
-            "name": "Submission", "color": "#2D75A4",
+            "name": "Submission", "color": "#2D75A4",  "total": 41,
             "children": [
              
-                  {"name": "Triangle", "color": "#67A9D5", "children": 
+                  {"name": "Triangle", "color": "#67A9D5", "total": 2, "children": 
                     [
                       { "fighterA": "Paul Craig", "fighterB": "Gadzhimurad Antigulov", "size": 1, "weightclass": "LHW"},
                       { "fighterA": "Amir Albazi", "fighterB": "Malcolm Gordon", "size": 1, "weightclass": "FW"},
                     ],  
                   },
-                  {"name": "RNC", "color": "#78B3DA", "children": 
+                  {"name": "RNC", "color": "#78B3DA", "total": 15, "children": 
                     [
                       { "fighterA": "Jack Shore", "fighterB": "Aaron Phillips", "size": 1, "weightclass": "BW"},
                       { "fighterA": "Aljamain Sterling", "fighterB": "Cory Sandhagen", "size": 1, "weightclass": "BW"},
@@ -317,7 +320,7 @@
                       { "fighterA": "Amanda Ribas", "fighterB": "Emily Whitmire", "size": 1, "weightclass": "WSW"},
                     ],  
                   },
-                  {"name": "Guillotine", "color": "#89BCDF", "children": 
+                  {"name": "Guillotine", "color": "#89BCDF", "total": 6, "children": 
                     [
                       { "fighterA": "Joel Alvarez", "fighterB": "Joe Duffy", "size": 1, "weightclass": "LW"},
                       { "fighterA": "Khama Worthy", "fighterB": "Luis Pena", "size": 1, "weightclass": "LW"},
@@ -327,42 +330,42 @@
                       { "fighterA": "Jordan Griffin", "fighterB": "TJ Brown", "size": 1, "weightclass": "WW"},
                     ],  
                   },
-                  {"name": "D'Arce", "color": "#9AC6E3", "children": 
+                  {"name": "D'Arce", "color": "#9AC6E3", "total": 2, "children": 
                     [
                       { "fighterA": "Khamzat Chimaev", "fighterB": "John Phillips", "size": 1, "weightclass": "MW"},
                       { "fighterA": "Julian Erosa", "fighterB": "Sean Woodson", "size": 1, "weightclass": "CW"},
                     ],  
                   },
-                  {"name": "Arm Triangle", "color": "#ABCFE8", "children": 
+                  {"name": "Arm Triangle", "color": "#ABCFE8", "total": 3, "children": 
                     [
                       { "fighterA": "Maurice Greene", "fighterB": "Gian Villante", "size": 1, "weightclass": "HW"},
                       { "fighterA": "Brandon Royval", "fighterB": "Tim Elliott", "size": 1, "weightclass": "FLW"},
                       { "fighterA": "Rodolfo Vieira", "fighterB": "Saparbeg Safarov", "size": 1, "weightclass": "MW"},
                     ],  
                   },
-                  {"name": "Anaconda", "color": "#89BCDF", "children": 
+                  {"name": "Anaconda", "color": "#89BCDF", "total": 1, "children": 
                     [
                       { "fighterA": "Makwan Amirkhani", "fighterB": "Danny Henry", "size": 1, "weightclass": "FW"},
                     ],  
                   },
               
-                  {"name": "Kneebar", "color": "#9AC6E3", "children": 
+                  {"name": "Kneebar", "color": "#9AC6E3", "total": 2, "children": 
                     [
                       { "fighterA": "Ariane Lipski", "fighterB": "Luana Carolina", "size": 1, "weightclass": "WFW"},
                       { "fighterA": "Mackenzie Dern", "fighterB": "Hannah Cifers", "size": 1, "weightclass": "WSW"}
                     ],
                   },
-                  {"name": "Kimura", "color": "#ABCFE8", "children": 
+                  {"name": "Kimura", "color": "#ABCFE8", "total": 1, "children": 
                     [
                       { "fighterA": "Jim Crute", "fighterB": "Michal Oleksiejczuk", "size": 1, "weightclass": "LHW"},
                     ],  
                   },
-                  {"name": "Heel Hook", "color": "#BCD9ED", "children": 
+                  {"name": "Heel Hook", "color": "#BCD9ED", "total": 1, "children": 
                     [
                       { "fighterA": "Jack Hermansson", "fighterB": "Kelvin Gastelum", "size": 1, "weightclass": "MW"},
                     ],  
                   },
-                  {"name": "Armbar", "color": "#CCE2F1", "children": [
+                  {"name": "Armbar", "color": "#CCE2F1", "total": 7, "children": [
                       { "fighterA": "Jim Miller", "fighterB": "Roosevelt Roberts", "size": 1, "weightclass": "CW"},
                       { "fighterA": "Fabricio Werdum", "fighterB": "Alexander Gustafsson", "size": 1, "weightclass": "HW"},
                       { "fighterA": "Jennifer Maia", "fighterB": "Joanne Calderwood", "size": 1, "weightclass": "WFLW"},
@@ -372,7 +375,7 @@
                       { "fighterA": "Kay Hansen", "fighterB": "Jinh Yu Frey", "size": 1, "weightclass": "WSW"}
                     ],  
                   },
-                  {"name": "Ankle Lock", "color": "#DDECF6", "children": 
+                  {"name": "Ankle Lock", "color": "#DDECF6", "total": 1, "children": 
                     [
                       { "fighterA": "Thiago Moises", "fighterB": "Michael Johnson", "size": 1, "weightclass": "LW"},
                     ],  
@@ -418,9 +421,6 @@
         if (d.data.children) {
           return d.data.color;
         } else {
-          if (d.data.fighterA && d.data.fighterB) {
-           return "aquamarine"
-          }
           return "#DEDEDE";
         }
       })
@@ -439,18 +439,22 @@
     let resultTypeTitle = g.select("g").append("svg:text")
         .attr("text-anchor", "middle")
         .attr("font-weight", "bold")
-        .attr("dy", ".4em")
+        .attr("dy", "4em")
         .style("fill", "white")
         .style("font-size", "20px");
-
+    
     function computeTextRotation(d) {
       var angle = (d.x0 + d.x1) / Math.PI * 90;
       return (angle < 120 || angle > 270) ? angle : angle + 180;
     }
 
     function mouseover(element) {
-      console.log(element);
-      resultTypeTitle.text(element.data.name);
+      // let saveTotal = (element.data.total / 242) * 100;
+      // totalPercentage = saveTotal.toFixed(1).toString() + "%";
+      // console.log(totalPercentage);
+      resultTypeTitle.text(element.data.name)
+      //totalPercentage.text(totalPercentage);
+
       if(!element.data.children) {
         document.getElementById("winner").innerHTML = "Winner";
         document.getElementById("loser").innerHTML = "Loser";
@@ -461,7 +465,6 @@
     
     function mouseleave(element) {
       if(!element.data.children) {
-        
         document.getElementById("winner").innerHTML = "";
         document.getElementById("loser").innerHTML = "";
         document.getElementById("left-fighter").innerHTML = "";
