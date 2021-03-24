@@ -27,6 +27,7 @@ html {
   margin: auto;
   text-align: center;
   font-family: 'Proza Libre', sans-serif;
+  width: 45%;
 }
 
 .left {
@@ -58,4 +59,10 @@ text {
 .menu {
   margin-left: 1%;
   margin-top: 2%;
+}
+
+@media only screen and (max-width: 1600px) {
+  #container {
+    margin-top: 4%;
+  }
 }
