@@ -16,6 +16,20 @@ html {
   text-align: center;
 }
 
+#winnerIcon {
+  text-align: center;
+  color: #FFD700;
+  font-size: 45px;
+  margin-bottom: 5%;
+}
+
+#loserIcon {
+  text-align: center;
+  color: rgb(252, 73, 73);
+  font-size: 45px;
+  margin-bottom: 5%;
+}
+
 #container {
   position: absolute;
   top: 50%;

@@ -8,8 +8,9 @@
   <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap" rel="stylesheet">
@@ -17,31 +18,30 @@
 </head>
 <body>
   <div class="background">
-    <div class="btn-group menu" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary" onclick="location.href='./iteration1.html'">Iteration #1</button>
-      <button type="button" class="btn btn-secondary" onclick="location.href='./iteration2.html'">Iteration #2</button>
-      <button type="button" class="btn btn-secondary" onclick="location.href='./index.html'">Iteration #3 (Final)</button>
-      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#descriptionModal">Show Description</button>
-    </div>
     <h1 class="main-title">2020 UFC Bout Results</h1>
     <div class="left">
+      <i class="fas fa-trophy" id="winnerIcon"></i>
       <h1 class="title" id="winner"></h1>
       <h3 id="left-fighter"></h3>
+      <h3 id="winnerUnder"></h3>
       <h3 id="winnerOdds"></h3>
     </div>
     <div id="container">
       <svg id="sunburst"></svg>
     </div>
     <div class="right">
+      <i class="far fa-frown-open" id="loserIcon"></i>
       <h1 class="title" id="loser"></h1>
       <h3 id="right-fighter"></h3>
+      <h3 id="loserUnder"></h3>
       <h3 id="loserOdds"></h3>
     </div>
   </div>
 </body>
 
 <script>
-
+    document.getElementById("winnerIcon").style.display = "none";
+    document.getElementById("loserIcon").style.display = "none";
     let ordinalColors = ["#96caff", "#faff16", "#fda899", "#13fcbb", "#eba6ff", "#bcca83", "#57e502", "#feaf23", "#c6c0cb", "#38f1fd", "#9ccfbe", "#f9feae", "#a6fe8e", "#bfcd03", "#ebd3b6", "#fec0df", "#c2eefc", "#cac2fc", "#bcfcd6", "#f4e5ff", "#f9dc56", "#80da93", "#ebb678", "#b1fb27", "#30dfc8", "#8dd0df", "#1ff479", "#cedbd8", "#d2e6b8", "#85feea", "#97db5c", "#deb7b7", "#cad5ef", "#d0eb6d", "#fe9fe1", "#bdc7ad", "#fcdadf", "#d9bae2", "#dac05a", "#ecda91", "#fef5d0", "#ffa4bc", "#43d9fd", "#d2fcf5", "#b1c7d0", "#e6f0fb", "#83e5bd", "#b2e598", "#fdfb73", "#73fd58", "#a6cfa2", "#a1e3e1", "#e4e21c", "#8ef8b0", "#e2c30e", "#fdc7ff", "#cefeb9", "#0be597", "#d4c491", "#fdc5b5", "#e4fdde", "#d5ccc7", "#acdaf8", "#e4c9da", "#fdc664", "#badfc5", "#bbd15f", "#fdf1f7", "#b4c3ed", "#93e8fd", "#ddd9e3", "#e5e5d7", "#98e116", "#e0d0fb", "#fccd95", "#aafdfe", "#5cd9de", "#deba9d", "#dce994", "#d6b2fb", "#c5bedd", "#bec4c3", "#feab79", "#82ea7f", "#fed7f3", "#8affd2", "#d6fc50", "#e8aed9", "#f7b7c2", "#2bf4e5", "#ffad53", "#11ff13", "#d3fe94", "#c2e530", "#aef161", "#fee5d4", "#a3d378", "#dad351", "#fec328", "#a4e3b3", "#a9efd9", "#feeb8a", "#85d4cd", "#e0b4c9", "#55e358", "#bddbe1", "#48ffa0", "#d6eee1", "#fee3b0", "#ff99fd", "#3fe0b0", "#84d7fe", "#7be9d3", "#1bf3cd", "#d4d4af", "#d6d278", "#70fffe", "#aac8e1", "#ffb0fe", "#b5ccbf", "#c6ccd5", "#ccd9c5", "#feee3e", "#cdc0ab", "#58e182", "#e9b8f8", "#f7bc97", "#b4e275", "#bee8e1", "#e1e3ff", "#ebebb2", "#8fd4af", "#c0d3a2", "#e7c67d", "#6ceba9", "#d8cde4", "#eacdc6", "#d4eef1", "#e7e8e9", "#7deaec", "#88f31d", "#c0efbe", "#75d8be", "#a0d1d3", "#fdacd4", "#09f64f", "#c4dc8c", "#d0d1fc", "#ecccf1", "#f7d517", "#d0dde8", "#e7dadc", "#78fe8b", "#e6e373", "#cde5fd", "#b1fead", "#e7fec5", "#e9fdfd", "#b9c3d9", "#cebec1", "#eab3a4", "#edb84a", "#8aea52", "#bad5fd", "#a7ddea", "#f9c9d5", "#f2deec", "#fbf4e7", "#b3d8cf", "#feb9ed", "#96e89d", "#d5d99c", "#efd16f", "#ecfb92", "#d0bbd2", "#89d97b", "#cdc47c", "#acd345", "#21e0f4", "#9ed693", "#9adfcd", "#ccdc4c", "#e3e3c2", "#d8f003", "#e7f158", "#b8fff2", "#cdb9e9", "#faa8ae", "#cac75c", "#d7d119", "#eccb48", "#bbd7ea", "#a0f3c1", "#cbeaa6", "#c5f4e0", "#ede9f5", "#b8bffd", "#97cced", "#70dba6", "#72dbf2", "#e6bddd", "#ddc2fe", "#b8ddb0", "#e7d29e", "#c7ec8c", "#d1edce", "#c8fb75", "#f9ffe8", "#e9abeb", "#b5d1b3", "#feb6af", "#ffba6e", "#92f772", "#e8f4cb", "#ffeda8", "#e5ff77", "#f6f8fe", "#c4c699", "#c5ca3f", "#e9bb29", "#19e2dc", "#d9bfb4", "#c6cabf", "#e6c091", "#bcd0d0", "#d5cbd3", "#aae346", "#d0d2d3", "#f1c7ab", "#72ef95", "#cdda6f", "#d9d5c0", "#a2eb81", "#72f3cc", "#91efe6", "#fed284", "#a6edf6", "#4bfee0", "#9bfb4f", "#c1f3f6", "#e0f9ab", "#d4ffd2", "#fffac1", "#a9c5fd", "#f0acc4", "#7adf34", "#a8d516", "#86dade", "#6cdfd7", "#a7d5b9", "#b4d899", "#f1c0bf", "#a9e8c7", "#e6e04c", "#fcd4bf", "#67feb6", "#ddfeee", "#f5af92", "#a7cddc", "#c7cae9", "#e1c2c9", "#06f6a4", "#64f36c", "#ffd056", "#e9d3ea", "#94f595", "#eadbcc", "#acf2b2", "#a2fde0", "#f5e5c6", "#f7eb67", "#f1e9e6", "#e2efdb", "#fbfd52", "#aacac8", "#6fdf6e", "#23e83d", "#d6c33e", "#edbb66", "#96d8f1", "#d9c9a7", "#30ef8c", "#66ed41", "#eabeed", "#c3dbce", "#d6d6e9", "#f8c6ee", "#d5d9d1", "#96f0cc", "#c7ef56", "#8ef6ff", "#aff0e8", "#b7f593", "#dee7e0", "#bdff5c", "#eff01a", "#d7f0fe", "#bdfdc3", "#f0ef9c", "#d3fe14", "#bec0ea", "#c6c2be", "#eab1b3"]
     let ufcData = {
     "name": "2020 UFC Fight Results", "children": [{
@@ -423,7 +423,6 @@ d3.csv("https://raw.githubusercontent.com/lysterjason/lysterjason.github.io/main
   var partition = d3.partition()
     .size([2 * Math.PI, radius]);
 
-  console.log(lookupData);
   var root = d3.hierarchy(ufcData)
     .sum(function (d) { return d.size});
 
@@ -476,12 +475,12 @@ d3.csv("https://raw.githubusercontent.com/lysterjason/lysterjason.github.io/main
   
     let path = getPath(element);
     d3.selectAll("path")
-      .style("opacity", 0.2);
+      .style("opacity", 0.3);
     g.selectAll("path")
       .filter(function(node) {
         return (path.indexOf(node) >= 0);
       })
-    .style("opacity", 1);
+      .style("opacity", 1);
 
     resultTypeTitle.text(element.data.name);
     
@@ -492,7 +491,6 @@ d3.csv("https://raw.githubusercontent.com/lysterjason/lysterjason.github.io/main
     
     let winnerObj;
     let loserObj;
-    console.log(hoveredFight);
     if (hoveredFight[0].Winner === "Red") {
       winnerObj = {
         odds: (parseInt(hoveredFight[0].R_odds) < 0) ? hoveredFight[0].R_odds : "+" + hoveredFight[0].R_odds,
@@ -519,12 +517,16 @@ d3.csv("https://raw.githubusercontent.com/lysterjason/lysterjason.github.io/main
 
     if(!element.data.children) {
       resultTypeTitle.text(element.data.type);
+      document.getElementById("winnerIcon").style.display = "block";
+      document.getElementById("loserIcon").style.display = "block";
       document.getElementById("winner").innerHTML = "Winner";
       document.getElementById("loser").innerHTML = "Loser";
       document.getElementById("left-fighter").innerHTML = element.data.fighterA;
       document.getElementById("right-fighter").innerHTML = element.data.fighterB;
-      document.getElementById("winnerOdds").innerHTML = winnerObj.underdog + " " + winnerObj.odds;
-      document.getElementById("loserOdds").innerHTML = loserObj.underdog + " " + loserObj.odds;
+      document.getElementById("winnerUnder").innerHTML =  winnerObj.underdog;
+      document.getElementById("loserUnder").innerHTML = loserObj.underdog;
+      document.getElementById("winnerOdds").innerHTML = "Odds: " + winnerObj.odds;
+      document.getElementById("loserOdds").innerHTML = "Odds: " + loserObj.odds;
     }
   }
   
@@ -544,10 +546,14 @@ d3.csv("https://raw.githubusercontent.com/lysterjason/lysterjason.github.io/main
     if(!element.data.children) {
       d3.select(this)
         .style("opacity", 1);
+      document.getElementById("winnerIcon").style.display = "none";
+      document.getElementById("loserIcon").style.display = "none";
       document.getElementById("winner").innerHTML = "";
       document.getElementById("loser").innerHTML = "";
       document.getElementById("left-fighter").innerHTML = "";
       document.getElementById("right-fighter").innerHTML = "";
+      document.getElementById("winnerUnder").innerHTML = "";
+      document.getElementById("loserUnder").innerHTML = "";
       document.getElementById("winnerOdds").innerHTML = "";
       document.getElementById("loserOdds").innerHTML = "";
     }
