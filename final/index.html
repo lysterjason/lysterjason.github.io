@@ -119,11 +119,9 @@ d3.csv("https://raw.githubusercontent.com/lysterjason/lysterjason.github.io/main
     let path = getPath(element);
     d3.selectAll("path")
       .style("opacity", 0.3);
-    g.selectAll("path")
-      .filter(function(node) {
-        return (path.indexOf(node) >= 0);
-      })
-      .style("opacity", 1);
+    g.selectAll("path").filter(function(node) {
+      return (path.indexOf(node) >= 0);
+    }).style("opacity", 1);
 
     resultTypeTitle.text(element.data.name);
     
